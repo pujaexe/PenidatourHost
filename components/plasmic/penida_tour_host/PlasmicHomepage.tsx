@@ -59,6 +59,8 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { DataProvider } from "@plasmicpkgs/plasmic-basic-components";
+
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_penida_tour_host.module.css"; // plasmic-import: 8sqboUZ4NdiwTEB5KeNSKm/projectcss
@@ -77,9 +79,11 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
-  section?: Flex__<"section">;
+  hero?: Flex__<"section">;
   h1?: Flex__<"h1">;
-  text?: Flex__<"div">;
+  section?: Flex__<"section">;
+  dataProvider?: Flex__<typeof DataProvider>;
+  link?: Flex__<"a"> & Partial<LinkProps>;
 };
 
 export interface DefaultHomepageProps {}
@@ -141,50 +145,204 @@ function PlasmicHomepage__RenderFunc(props: {
           )}
         >
           <section
+            data-plasmic-name={"hero"}
+            data-plasmic-override={overrides.hero}
+            className={classNames(projectcss.all, sty.hero)}
+          >
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__dwPhH)}
+            >
+              <h6
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h6,
+                  projectcss.__wab_text,
+                  sty.h6__mzCof
+                )}
+              >
+                {"nusapenidatourhost.com"}
+              </h6>
+              <h1
+                data-plasmic-name={"h1"}
+                data-plasmic-override={overrides.h1}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h1,
+                  projectcss.__wab_text,
+                  sty.h1
+                )}
+              >
+                {"Explore Nusapenida"}
+              </h1>
+              <h6
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h6,
+                  projectcss.__wab_text,
+                  sty.h6__ehZj
+                )}
+              >
+                {"Explore the most popular places in nusa penida "}
+              </h6>
+            </Stack__>
+          </section>
+          <section
             data-plasmic-name={"section"}
             data-plasmic-override={overrides.section}
             className={classNames(projectcss.all, sty.section)}
           >
-            <h1
-              data-plasmic-name={"h1"}
-              data-plasmic-override={overrides.h1}
-              className={classNames(
-                projectcss.all,
-                projectcss.h1,
-                projectcss.__wab_text,
-                sty.h1
-              )}
+            <DataProvider
+              data-plasmic-name={"dataProvider"}
+              data-plasmic-override={overrides.dataProvider}
+              className={classNames("__wab_instance", sty.dataProvider)}
+              data={[
+                {
+                  id: "01",
+                  Package_name: "West Nusapenida Tour",
+                  Desc: "Explore the most popular places in nusa penida : klingking beach, Broken Beach, Angel billabong and Crystal bay",
+                  "Featured Image": "https://www.fillmurray.com/200/300",
+                  Price: "Rp 100.000"
+                },
+                {
+                  id: "02",
+                  Package_name: "East Nusapenida Tour",
+                  Desc: "Explore the most popular places in nusa penida : klingking beach, Broken Beach, Angel billabong and Crystal bay",
+                  "Featured Image": "https://www.fillmurray.com/200/300",
+                  Price: "Rp 100.000"
+                }
+              ]}
+              name={"package-list"}
             >
-              {"Welcome to your first page."}
-            </h1>
-            <div
-              data-plasmic-name={"text"}
-              data-plasmic-override={overrides.text}
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text
-              )}
-            >
-              <React.Fragment>
-                <React.Fragment>
-                  {
-                    "If you haven't already done so, go back and learn the basics by going through the Plasmic Levels tutorial.\n\nIt's always easier to start from examples! Add a new page using a template\u2014do this from the list of pages in the top toolbar.\n\nOr press the big blue + button to start inserting items into this page.\n\nIntegrate this project into your codebase\u2014press the "
-                  }
-                </React.Fragment>
-                <span
-                  className={"plasmic_default__all plasmic_default__span"}
-                  style={{ fontWeight: 700 }}
-                >
-                  {"Code"}
-                </span>
-                <React.Fragment>
-                  {
-                    " button in the top right and follow the quickstart instructions.\n\nJoin our Slack community (icon in bottom left) for help any time."
-                  }
-                </React.Fragment>
-              </React.Fragment>
-            </div>
+              <DataCtxReader__>
+                {$ctx => (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__ykcpZ)}
+                  >
+                    {(_par =>
+                      !_par ? [] : Array.isArray(_par) ? _par : [_par])(
+                      (() => {
+                        try {
+                          return $ctx["package-list"];
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return [];
+                          }
+                          throw e;
+                        }
+                      })()
+                    ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                      const currentItem = __plasmic_item_0;
+                      const currentIndex = __plasmic_idx_0;
+                      return (
+                        <PlasmicLink__
+                          data-plasmic-name={"link"}
+                          data-plasmic-override={overrides.link}
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.a,
+                            sty.link
+                          )}
+                          component={Link}
+                          href={`/${(() => {
+                            try {
+                              return currentItem.id;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "";
+                              }
+                              throw e;
+                            }
+                          })()}`}
+                          key={currentIndex}
+                          platform={"nextjs"}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__dFCqX
+                            )}
+                          >
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return currentItem.Package_name;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__bFu2K
+                            )}
+                          >
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return currentItem.Desc;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__gGevS
+                            )}
+                          >
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return currentItem.Price;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          </div>
+                        </PlasmicLink__>
+                      );
+                    })}
+                  </div>
+                )}
+              </DataCtxReader__>
+            </DataProvider>
           </section>
         </div>
       </div>
@@ -193,19 +351,23 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "section", "h1", "text"],
-  section: ["section", "h1", "text"],
+  root: ["root", "hero", "h1", "section", "dataProvider", "link"],
+  hero: ["hero", "h1"],
   h1: ["h1"],
-  text: ["text"]
+  section: ["section", "dataProvider", "link"],
+  dataProvider: ["dataProvider", "link"],
+  link: ["link"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  section: "section";
+  hero: "section";
   h1: "h1";
-  text: "div";
+  section: "section";
+  dataProvider: typeof DataProvider;
+  link: "a";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -268,9 +430,11 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    section: makeNodeComponent("section"),
+    hero: makeNodeComponent("hero"),
     h1: makeNodeComponent("h1"),
-    text: makeNodeComponent("text"),
+    section: makeNodeComponent("section"),
+    dataProvider: makeNodeComponent("dataProvider"),
+    link: makeNodeComponent("link"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
