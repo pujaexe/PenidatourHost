@@ -1,0 +1,84 @@
+{
+  "platform": "nextjs",
+  "code": {
+    "lang": "ts",
+    "scheme": "blackbox",
+    "reactRuntime": "classic"
+  },
+  "style": {
+    "scheme": "css-modules",
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+  },
+  "images": {
+    "scheme": "public-files",
+    "publicDir": "../public",
+    "publicUrlPrefix": "/"
+  },
+  "tokens": {
+    "scheme": "theo",
+    "tokensFilePath": "plasmic-tokens.theo.json"
+  },
+  "srcDir": "components",
+  "defaultPlasmicDir": "./plasmic",
+  "projects": [
+    {
+      "projectId": "8sqboUZ4NdiwTEB5KeNSKm",
+      "projectApiToken": "MbUCbaFPFbsDipbA50o0HhEBgN5k7GA682USGx6By22YJTtFhcuVydRk8TCxFb2uzjcVfcBN6lXvTSHmUtw",
+      "projectName": "PenidaTourHost",
+      "version": "latest",
+      "cssFilePath": "plasmic/penida_tour_host/plasmic_penida_tour_host.module.css",
+      "components": [
+        {
+          "id": "uiobudG9bYmv",
+          "name": "Homepage",
+          "type": "managed",
+          "projectId": "8sqboUZ4NdiwTEB5KeNSKm",
+          "renderModuleFilePath": "plasmic/penida_tour_host/PlasmicHomepage.tsx",
+          "importSpec": {
+            "modulePath": "../pages/index.tsx"
+          },
+          "cssFilePath": "plasmic/penida_tour_host/PlasmicHomepage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/"
+        }
+      ],
+      "icons": [],
+      "images": [],
+      "indirect": false,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "codeComponents": [
+        {
+          "id": "MAlkwlDu0RSM",
+          "name": "PlasmicHead",
+          "displayName": "hostless-plasmic-head",
+          "componentImportPath": "@plasmicapp/react-web"
+        },
+        {
+          "id": "Xpd9ACSW8fiw",
+          "name": "Fetcher",
+          "displayName": "plasmic-data-source-fetcher",
+          "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
+        }
+      ],
+      "customFunctions": []
+    }
+  ],
+  "globalVariants": {
+    "variantGroups": [
+      {
+        "id": "T5xXLTJfKZLl",
+        "name": "Screen",
+        "projectId": "8sqboUZ4NdiwTEB5KeNSKm",
+        "contextFilePath": "plasmic/penida_tour_host/PlasmicGlobalVariant__Screen.tsx"
+      }
+    ]
+  },
+  "wrapPagesWithGlobalContexts": true,
+  "nextjsConfig": {
+    "pagesDir": "../pages"
+  },
+  "cliVersion": "0.1.326",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.326/dist/plasmic.schema.json"
+}
