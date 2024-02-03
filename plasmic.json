@@ -63,6 +63,16 @@
           "id": "YfEot1eeS0Ws",
           "name": "nusapenida-home-min.jpg",
           "filePath": "../public/plasmic/penida_tour_host/images/nusapenidaHomeMinjpg.jpg"
+        },
+        {
+          "id": "Q9HDcFBr0sAR",
+          "name": "section2.jpg",
+          "filePath": "../public/plasmic/penida_tour_host/images/section2Jpg.jpg"
+        },
+        {
+          "id": "B8W_Y0zTZIZR",
+          "name": "nusped2-min.jpg",
+          "filePath": "../public/plasmic/penida_tour_host/images/nusped2Minjpg.jpg"
         }
       ],
       "indirect": false,
@@ -140,7 +150,8 @@
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     }
   ],
   "globalVariants": {

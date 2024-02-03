@@ -81,6 +81,10 @@ export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
   hero?: Flex__<"section">;
   h1?: Flex__<"h1">;
+  why?: Flex__<"section">;
+  columns?: Flex__<"div">;
+  h3?: Flex__<"h3">;
+  article?: Flex__<"article">;
   section?: Flex__<"section">;
   dataProvider?: Flex__<typeof DataProvider>;
   link?: Flex__<"a"> & Partial<LinkProps>;
@@ -189,6 +193,66 @@ function PlasmicHomepage__RenderFunc(props: {
             </Stack__>
           </section>
           <section
+            data-plasmic-name={"why"}
+            data-plasmic-override={overrides.why}
+            className={classNames(projectcss.all, sty.why)}
+          >
+            <Stack__
+              as={"div"}
+              data-plasmic-name={"columns"}
+              data-plasmic-override={overrides.columns}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.columns)}
+            >
+              <div className={classNames(projectcss.all, sty.column__cD76V)}>
+                <h3
+                  data-plasmic-name={"h3"}
+                  data-plasmic-override={overrides.h3}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h3,
+                    projectcss.__wab_text,
+                    sty.h3
+                  )}
+                >
+                  {"Why Nusapenida?"}
+                </h3>
+                <article
+                  data-plasmic-name={"article"}
+                  data-plasmic-override={overrides.article}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.article
+                  )}
+                >
+                  {
+                    "Bali is the most tourist destination in the word, there are so many places we can explore during you are in Bali, not only , Kuta,  Canggu, Jimbaran  or Sanur, there are still so many beach we still can explore in Bali,one of the famous place is Nusapenida Island, only one hour crossing from Sanur Harbor which is the main harbor in bali to Nusapenida, \n\nNusa Penida just a small island which is only 209.4 km square and 60.000 population in this island, nusa penida is part of the Klungkung Regency and province of Bali , there are so may beach that  also can explore in one day, Klingking beach is the most popular one, people called T-rex , such an amazing view from the top of the above Clift, beside that we have Broken beach, Angel Billabong beach, Crystal bay, Atuh, Diamond and tree house "
+                  }
+                </article>
+              </div>
+              <div className={classNames(projectcss.all, sty.column__tVr7Z)}>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img___2E2S4)}
+                  displayHeight={"425px"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"425px"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/penida_tour_host/images/nusped2Minjpg.jpg",
+                    fullWidth: 768,
+                    fullHeight: 1024,
+                    aspectRatio: undefined
+                  }}
+                />
+              </div>
+            </Stack__>
+          </section>
+          <section
             data-plasmic-name={"section"}
             data-plasmic-override={overrides.section}
             className={classNames(projectcss.all, sty.section)}
@@ -264,6 +328,18 @@ function PlasmicHomepage__RenderFunc(props: {
                           key={currentIndex}
                           platform={"nextjs"}
                         >
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img___78JBx)}
+                            displayHeight={"auto"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                          />
+
                           <div
                             className={classNames(
                               projectcss.all,
@@ -351,9 +427,24 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "hero", "h1", "section", "dataProvider", "link"],
+  root: [
+    "root",
+    "hero",
+    "h1",
+    "why",
+    "columns",
+    "h3",
+    "article",
+    "section",
+    "dataProvider",
+    "link"
+  ],
   hero: ["hero", "h1"],
   h1: ["h1"],
+  why: ["why", "columns", "h3", "article"],
+  columns: ["columns", "h3", "article"],
+  h3: ["h3"],
+  article: ["article"],
   section: ["section", "dataProvider", "link"],
   dataProvider: ["dataProvider", "link"],
   link: ["link"]
@@ -365,6 +456,10 @@ type NodeDefaultElementType = {
   root: "div";
   hero: "section";
   h1: "h1";
+  why: "section";
+  columns: "div";
+  h3: "h3";
+  article: "article";
   section: "section";
   dataProvider: typeof DataProvider;
   link: "a";
@@ -432,6 +527,10 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     hero: makeNodeComponent("hero"),
     h1: makeNodeComponent("h1"),
+    why: makeNodeComponent("why"),
+    columns: makeNodeComponent("columns"),
+    h3: makeNodeComponent("h3"),
+    article: makeNodeComponent("article"),
     section: makeNodeComponent("section"),
     dataProvider: makeNodeComponent("dataProvider"),
     link: makeNodeComponent("link"),
