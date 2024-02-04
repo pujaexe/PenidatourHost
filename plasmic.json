@@ -55,9 +55,44 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/[slug]"
+        },
+        {
+          "id": "ZzYHWFOP3W93",
+          "name": "Button",
+          "type": "managed",
+          "projectId": "8sqboUZ4NdiwTEB5KeNSKm",
+          "renderModuleFilePath": "plasmic/penida_tour_host/PlasmicButton.tsx",
+          "importSpec": {
+            "modulePath": "Button.tsx"
+          },
+          "cssFilePath": "plasmic/penida_tour_host/PlasmicButton.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "button"
         }
       ],
-      "icons": [],
+      "icons": [
+        {
+          "id": "piPhikoMaLwY",
+          "name": "ChecksvgIcon",
+          "moduleFilePath": "plasmic/penida_tour_host/icons/PlasmicIcon__Checksvg.tsx"
+        },
+        {
+          "id": "oAGk-17bb9h7",
+          "name": "IconIcon",
+          "moduleFilePath": "plasmic/penida_tour_host/icons/PlasmicIcon__Icon.tsx"
+        },
+        {
+          "id": "9Hxs0EmoDoxJ",
+          "name": "Icon2Icon",
+          "moduleFilePath": "plasmic/penida_tour_host/icons/PlasmicIcon__Icon2.tsx"
+        },
+        {
+          "id": "UhKaih3_kTNj",
+          "name": "Icon3Icon",
+          "moduleFilePath": "plasmic/penida_tour_host/icons/PlasmicIcon__Icon3.tsx"
+        }
+      ],
       "images": [
         {
           "id": "YfEot1eeS0Ws",
@@ -73,6 +108,16 @@
           "id": "B8W_Y0zTZIZR",
           "name": "nusped2-min.jpg",
           "filePath": "../public/plasmic/penida_tour_host/images/nusped2Minjpg.jpg"
+        },
+        {
+          "id": "eKthkFGejmXc",
+          "name": "image-tour1.jpg",
+          "filePath": "../public/plasmic/penida_tour_host/images/imageTour1Jpg.jpg"
+        },
+        {
+          "id": "75i2qCajQ9ui",
+          "name": "banner-min.png",
+          "filePath": "../public/plasmic/penida_tour_host/images/bannerMinpng.png"
         }
       ],
       "indirect": false,
@@ -152,6 +197,76 @@
       ],
       "customFunctions": [],
       "jsBundleThemes": []
+    },
+    {
+      "projectId": "r3ASNrnyvLLLAtDvzUioQ",
+      "projectApiToken": "eSFGpQaYCtO9sRbPuQ2Ll9dmLOg8I4oKhx6e1PuCrsfmUIVbFbSXcy32UrPTwF9zX2HVXA0xaIKJNhCMHvA",
+      "projectName": "react-slick",
+      "version": ">0.0.0",
+      "cssFilePath": "plasmic/react_slick/plasmic_react_slick.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "codeComponents": [
+        {
+          "id": "HOQUyOpClJ",
+          "name": "SliderWrapper",
+          "displayName": "hostless-slider",
+          "componentImportPath": "@plasmicpkgs/react-slick",
+          "helper": {
+            "name": "sliderHelpers",
+            "importPath": "@plasmicpkgs/react-slick"
+          }
+        }
+      ],
+      "customFunctions": []
+    },
+    {
+      "projectId": "58GpZjZCWTaJ8AUhpCwt2K",
+      "projectApiToken": "DIkcfhBwjMCJSjcxfBkMuy4NImyytq5EWylxVcpS9t9EpdhnPQuBgBGxmk00AB1itMFa1KXTxOKnrjN2PN9nlA",
+      "projectName": "react-awesome-reveal",
+      "version": ">0.0.0",
+      "cssFilePath": "plasmic/react_awesome_reveal/plasmic_react_awesome_reveal.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "codeComponents": [
+        {
+          "id": "R6s1FdhksG",
+          "name": "Reveal",
+          "displayName": "hostless-reveal",
+          "componentImportPath": "@plasmicpkgs/react-awesome-reveal"
+        }
+      ],
+      "customFunctions": []
+    },
+    {
+      "projectId": "7nJ7UcFmq9UzB6eXfC5z4a",
+      "projectApiToken": "uZp069FLSLNVA2dpWnqC3BUaj3flvtNBNXt6e1b67rm4Uh6lGHgYJ65FCBXlOFTB5KDW7RmmOxIAzgHYCg",
+      "projectName": "plasmic-nav",
+      "version": ">0.0.0",
+      "cssFilePath": "plasmic/plasmic_nav/plasmic_plasmic_nav.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "codeComponents": [
+        {
+          "id": "jGx9tiKJoex",
+          "name": "NavigationBar",
+          "displayName": "hostless-plasmic-navigation-bar",
+          "componentImportPath": "@plasmicpkgs/plasmic-nav"
+        }
+      ],
+      "customFunctions": []
     }
   ],
   "globalVariants": {

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans%3Aital%2Cwght%400%2C400%3B0%2C600%3B0%2C700&family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C600%3B0%2C700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&display=swap");
 
 .plasmic_tokens {
   --plsmc-standard-width: 800px;
@@ -12,7 +12,7 @@
 
 .plasmic_default_styles {
   --mixin-OsBhDZnmgNDl_font-family: "Plus Jakarta Sans", sans-serif;
-  --mixin-OsBhDZnmgNDl_font-size: 16px;
+  --mixin-OsBhDZnmgNDl_font-size: 14px;
   --mixin-OsBhDZnmgNDl_font-weight: 400;
   --mixin-OsBhDZnmgNDl_font-style: normal;
   --mixin-OsBhDZnmgNDl_color: #535353;
@@ -26,7 +26,7 @@
   --mixin-OsBhDZnmgNDl_text-overflow: clip;
   --mixin-BKT1aIQr-UjJ_color: #000000;
   --mixin-BKT1aIQr-UjJ_font-weight: 700;
-  --mixin-BKT1aIQr-UjJ_font-size: 64px;
+  --mixin-BKT1aIQr-UjJ_font-size: 48px;
   --mixin-BKT1aIQr-UjJ_line-height: 1;
   --mixin-BKT1aIQr-UjJ_letter-spacing: -1px;
   --mixin-BKT1aIQr-UjJ_white-space: pre-wrap;
@@ -36,7 +36,7 @@
   --mixin-bzGvsZf_T-le_letter-spacing: -0.5px;
   --mixin-bzGvsZf_T-le_line-height: 1.1;
   --mixin-bzGvsZf_T-le_white-space: pre-wrap;
-  --mixin-l-epmYGf2Ll8_color: #0070f3;
+  --mixin-l-epmYGf2Ll8_color: #000000;
   --mixin-l-epmYGf2Ll8_white-space: pre-wrap;
   --mixin-eSoFAg2v1QAx_color: #000000;
   --mixin-eSoFAg2v1QAx_font-size: 32px;

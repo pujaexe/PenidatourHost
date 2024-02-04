@@ -12,9 +12,14 @@
     "@plasmicapp/cli": "^0.1.326",
     "@plasmicapp/react-web": "^0.2.318",
     "@plasmicpkgs/plasmic-basic-components": "^0.0.209",
+    "@plasmicpkgs/plasmic-nav": "^0.0.160",
+    "@plasmicpkgs/react-awesome-reveal": "^3.8.191",
+    "@plasmicpkgs/react-slick": "^0.0.211",
     "next": "14.1.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-slick": "^0.30.1",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@types/node": "^20",

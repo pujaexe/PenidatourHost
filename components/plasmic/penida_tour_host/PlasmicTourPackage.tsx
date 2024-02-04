@@ -59,12 +59,21 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { NavigationBar } from "@plasmicpkgs/plasmic-nav";
 import { DataProvider } from "@plasmicpkgs/plasmic-basic-components";
+import { SliderWrapper } from "@plasmicpkgs/react-slick";
+import { sliderHelpers as SliderWrapper_Helpers } from "@plasmicpkgs/react-slick";
+import Button from "../../Button"; // plasmic-import: ZzYHWFOP3W93/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_penida_tour_host.module.css"; // plasmic-import: 8sqboUZ4NdiwTEB5KeNSKm/projectcss
 import sty from "./PlasmicTourPackage.module.css"; // plasmic-import: 0Pcep1A6T4N4/css
+
+import Icon3Icon from "./icons/PlasmicIcon__Icon3"; // plasmic-import: UhKaih3_kTNj/icon
+import Icon2Icon from "./icons/PlasmicIcon__Icon2"; // plasmic-import: 9Hxs0EmoDoxJ/icon
+import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: piPhikoMaLwY/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: oAGk-17bb9h7/icon
 
 createPlasmicElementProxy;
 
@@ -79,8 +88,14 @@ export const PlasmicTourPackage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicTourPackage__OverridesType = {
   root?: Flex__<"div">;
+  navigationBar?: Flex__<typeof NavigationBar>;
   dataProvider?: Flex__<typeof DataProvider>;
+  hero?: Flex__<"section">;
   h1?: Flex__<"h1">;
+  details?: Flex__<"section">;
+  columns?: Flex__<"div">;
+  sliderCarousel?: Flex__<typeof SliderWrapper>;
+  button?: Flex__<typeof Button>;
 };
 
 export interface DefaultTourPackageProps {}
@@ -116,6 +131,27 @@ function PlasmicTourPackage__RenderFunc(props: {
 
   const currentUser = useCurrentUser?.() || {};
 
+  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
+    () => [
+      {
+        path: "sliderCarousel.currentSlide",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => 0,
+
+        refName: "sliderCarousel",
+        onMutate: generateOnMutateForSpec("currentSlide", SliderWrapper_Helpers)
+      }
+    ],
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
+
   return (
     <React.Fragment>
       <Head></Head>
@@ -141,6 +177,120 @@ function PlasmicTourPackage__RenderFunc(props: {
             sty.root
           )}
         >
+          <NavigationBar
+            data-plasmic-name={"navigationBar"}
+            data-plasmic-override={overrides.navigationBar}
+            brand={
+              <PlasmicLink__
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  sty.link__wZeDp
+                )}
+                component={Link}
+                href={"#"}
+                platform={"nextjs"}
+              >
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img___7Qrfz)}
+                  displayHeight={"40px"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"none"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  src={"https://static1.plasmic.app/nav-logo-placeholder.svg"}
+                />
+              </PlasmicLink__>
+            }
+            className={classNames("__wab_instance", sty.navigationBar)}
+            closeButton={
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__dfDk1)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"none"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                src={"https://static1.plasmic.app/close.svg"}
+              />
+            }
+            itemsGap={24}
+            menuItems={
+              <React.Fragment>
+                <PlasmicLink__
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__tIhed
+                  )}
+                  component={Link}
+                  href={"/"}
+                  platform={"nextjs"}
+                >
+                  {"Home"}
+                </PlasmicLink__>
+                <PlasmicLink__
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link___6FnxP
+                  )}
+                  component={Link}
+                  href={"/#about"}
+                  platform={"nextjs"}
+                >
+                  {"About"}
+                </PlasmicLink__>
+                <PlasmicLink__
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link___6Fkc
+                  )}
+                  component={Link}
+                  href={"/#packages"}
+                  platform={"nextjs"}
+                >
+                  {"Packages"}
+                </PlasmicLink__>
+                <PlasmicLink__
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__y36Nt
+                  )}
+                  component={Link}
+                  href={"/#cta"}
+                  platform={"nextjs"}
+                >
+                  {"Contact"}
+                </PlasmicLink__>
+              </React.Fragment>
+            }
+            openButton={
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__iWply)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"none"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                src={"https://static1.plasmic.app/menu.svg"}
+              />
+            }
+            responsiveBreakpoint={768}
+          />
+
           <DataProvider
             data-plasmic-name={"dataProvider"}
             data-plasmic-override={overrides.dataProvider}
@@ -156,9 +306,9 @@ function PlasmicTourPackage__RenderFunc(props: {
                   "http://www.image.com"
                 ],
                 description:
-                  "Explore the most popular places in nusa penida: klingking beach, Broken Beach, Angel billabong and Crystal bay",
-                price_per_person: 825000,
-                minimum_people: 2,
+                  "Explore the most popular places in nusa penida : klingking beach, Broken Beach, Angel billabong and Crystal bay",
+                price_per_person: "IDR 825.000",
+                minimum_people: "2 Person",
                 itineraries: [
                   { time: "06:00 AM", activity: "Pick up time" },
                   { time: "07:00 AM", activity: "Arrive sanur harbor" },
@@ -193,17 +343,17 @@ function PlasmicTourPackage__RenderFunc(props: {
               },
               {
                 id: "02",
-                package_name: "East Nusapenida tour",
-                feature_image: "http://www.image.com",
+                package_name: "East Nusapeida tour",
+                feature_image: "/path/to/feature/image.jpg",
                 images: [
-                  "http://www.image.com",
-                  "http://www.image.com",
-                  "http://www.image.com"
+                  "http://www.example-image1.com",
+                  "http://www.example-image2.com",
+                  "http://www.example-image3.com"
                 ],
                 description:
-                  "East Explore the most popular places in nusa penida: klingking beach, Broken Beach, Angel billabong and Crystal bay",
-                price_per_person: 900,
-                minimum_people: 3,
+                  "Tour East Nusa Penida Visit the famous Tree House \u2013 Diamond beach, Atuh and many More",
+                price_per_person: "IDR 875.000",
+                minimum_people: "2 Person",
                 itineraries: [
                   { time: "06:00 AM", activity: "Pick up time" },
                   { time: "07:00 AM", activity: "Arrive sanur harbor" },
@@ -213,62 +363,791 @@ function PlasmicTourPackage__RenderFunc(props: {
                     time: "09:00 AM",
                     activity: "Arrive in Nusa Penida Island at Buyuk harbor"
                   },
-                  { time: "10:00 AM", activity: "Explore Kelingking Beach" },
-                  {
-                    time: "11:00 AM",
-                    activity: "Visit Broken Beach and Angel Billabong"
-                  },
+                  { time: "09:30 AM", activity: "Arrive at Tree house" },
+                  { time: "11:00 AM", activity: "Arrive at Diamond beach" },
                   { time: "12:15 PM", activity: "Lunch at Restaurant" },
-                  { time: "01:40 PM", activity: "Swim at Crystal Bay" },
-                  { time: "03:15 PM", activity: "Back to Buyuk Harbor" },
-                  { time: "04:00 PM", activity: "Depart to Sanur Harbor" },
+                  { time: "01:30 PM", activity: "Arrive at Atuh Beach" },
+                  { time: "03:30 PM", activity: "Back to harbor" },
+                  { time: "04:30 PM", activity: "Return to Sanur Harbor" },
                   {
-                    time: "05:20 PM",
-                    activity: "Back to accommodation drop to the Hotel"
+                    time: "05:30 PM",
+                    activity: "Arrive at Sanur and driver back to hotel"
+                  }
+                ],
+                whats_included: [],
+                whats_excluded: [],
+                cancellation_policy: "Free Cancellation Before 24 hours"
+              },
+              {
+                id: "03",
+                package_name: "West Nusapenida Snorkeling Tour",
+                feature_image: "/path/to/feature/image.jpg",
+                images: [
+                  "http://www.example-snorkel1.com",
+                  "http://www.example-snorkel2.com",
+                  "http://www.example-snorkel3.com"
+                ],
+                description:
+                  "Explore West Nusapenida with an exciting snorkeling adventure, including a visit to Manta ray snorkeling spots and other beautiful locations such as Gamet Bay and SD Point.",
+                price_per_person: "IDR 1.125.000",
+                minimum_people: "1 Person",
+                itineraries: [
+                  { time: "06:00 AM", activity: "Pick up time" },
+                  { time: "07:00 AM", activity: "Arrive at sanur harbor" },
+                  {
+                    time: "07:30 AM",
+                    activity: "Crossing to Nusapenida with speed boat"
+                  },
+                  { time: "09:00 AM", activity: "Arrive at Buyuk harbor" },
+                  {
+                    time: "09:30 AM",
+                    activity: "Fitting the snorkeling equipment"
+                  },
+                  {
+                    time: "10:00 AM",
+                    activity: "Get ready to snorkeling at Manta ray"
+                  },
+                  { time: "11:00 AM", activity: "Finish at manta ray" },
+                  { time: "11:15 AM", activity: "Arrive at Gamet bay point" },
+                  { time: "12:00 PM", activity: "Depart to SD point" },
+                  { time: "12:15 PM", activity: "Arrive at SD point" },
+                  {
+                    time: "01:00 PM",
+                    activity: "Finish snorkeling \u2013 change clothes"
+                  },
+                  { time: "02:30 PM", activity: "Depart to Kelingking Beach" },
+                  {
+                    time: "03:30 PM",
+                    activity: "Go to Broken Beach and Angel Billabong"
+                  },
+                  { time: "04:15 PM", activity: "Arrive at Buyuk harbor" },
+                  { time: "04:30 PM", activity: "Back to sanur" },
+                  {
+                    time: "05:30 PM",
+                    activity: "Arrive at sanur and back to hotel"
                   }
                 ],
                 whats_included: [
-                  "Speed Boat To Nusa Penida",
-                  "Entrance Fees",
-                  "English speaking guide",
-                  "Hotel pickup and drop off"
+                  "Free Pick up at  Sanur, Denpasar, Nusadua, Jimbaran, Kuta, Seminyak, Legian, Canggu , Ubud "
                 ],
-                whats_excluded: ["Personal Expenses", "Meals"],
-                cancellation_policy: "Free Cancellation Before 24 hour"
+                whats_excluded: [
+                  "Extra Pickup at Candidasa , Amed, Kintamani, Tulamben"
+                ],
+                cancellation_policy: "Free Cancellation Before 24 hours"
+              },
+              {
+                id: "04",
+                package_name: "Mount Batur Sunrise Jeep Tour",
+                feature_image: "/path/to/feature/image.jpg",
+                images: [
+                  "http://www.example-jeep1.com",
+                  "http://www.example-jeep2.com",
+                  "http://www.example-jeep3.com"
+                ],
+                description:
+                  "Experience the breathtaking sunrise from the slope of Mount Batur with a classic jeep ride to the sunrise point at 1,560m above sea level. Enjoy a light breakfast and hot beverages while you witness the sun rising, followed by a tour of the south volcano's black lava.",
+                price_per_person: "IDR 300,000",
+                maximum_people: "3 Pax per Jeep",
+                itineraries: [
+                  {
+                    time: "04:15 AM",
+                    activity:
+                      "Meeting point and briefing at Volcano rim Glamping"
+                  },
+                  { time: "04:30 AM", activity: "Drive to the sunrise point" },
+                  { time: "05:00 AM", activity: "Arrive at the sunrise point" },
+                  { time: "05:30 AM - 06:00 AM", activity: "Sunrise" },
+                  { time: "07:00 AM", activity: "Leave the sunrise point" },
+                  {
+                    time: "07:30 AM",
+                    activity: "Arrive at The Black Lava / frozen Lava"
+                  },
+                  {
+                    time: "08:30 AM",
+                    activity: "Drive back to the Volcano rim"
+                  },
+                  { time: "09:00 AM", activity: "Finish" }
+                ],
+                whats_included: [],
+                whats_excluded: [
+                  "Additional Charge for pickup at Hotel ubud : 500.000",
+                  "Sanur, Kuta, seminyak, Jimbaran, canggu, Candi dasa 550.000/ car max 5 pax"
+                ],
+                cancellation_policy: "Free Cancellation Before 24 hours"
               }
             ]}
             name={"tourlist"}
           >
             <DataCtxReader__>
               {$ctx => (
-                <h1
-                  data-plasmic-name={"h1"}
-                  data-plasmic-override={overrides.h1}
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h1,
-                    projectcss.__wab_text,
-                    sty.h1
-                  )}
-                >
-                  <React.Fragment>
-                    {(() => {
-                      try {
-                        return $ctx.tourlist.find(
-                          tour => tour.id === $ctx.params.slug
-                        ).package_name;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "";
-                        }
-                        throw e;
-                      }
-                    })()}
-                  </React.Fragment>
-                </h1>
+                <React.Fragment>
+                  <section
+                    data-plasmic-name={"hero"}
+                    data-plasmic-override={overrides.hero}
+                    className={classNames(projectcss.all, sty.hero)}
+                  >
+                    <Stack__
+                      as={"div"}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.freeBox__lRylu)}
+                    >
+                      <h1
+                        data-plasmic-name={"h1"}
+                        data-plasmic-override={overrides.h1}
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h1,
+                          projectcss.__wab_text,
+                          sty.h1
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $ctx.tourlist.find(
+                                tour => tour.id === $ctx.params.slug
+                              ).package_name;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "Explore Nusapenida";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </h1>
+                    </Stack__>
+                  </section>
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__q5RfY)}
+                  >
+                    <Stack__
+                      as={PlasmicLink__}
+                      hasGap={true}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        sty.link__ztBhk
+                      )}
+                      component={Link}
+                      href={"/"}
+                      platform={"nextjs"}
+                    >
+                      <Icon3Icon
+                        className={classNames(projectcss.all, sty.svg__kBnXq)}
+                        role={"img"}
+                      />
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___5D9X
+                        )}
+                      >
+                        {"Home"}
+                      </div>
+                    </Stack__>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__hmBi2
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return (
+                              "/ " +
+                              $ctx.tourlist.find(
+                                tour => tour.id === $ctx.params.slug
+                              ).package_name
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    </div>
+                  </Stack__>
+                  <section
+                    data-plasmic-name={"details"}
+                    data-plasmic-override={overrides.details}
+                    className={classNames(projectcss.all, sty.details)}
+                  >
+                    <Stack__
+                      as={"div"}
+                      data-plasmic-name={"columns"}
+                      data-plasmic-override={overrides.columns}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.columns)}
+                    >
+                      <Stack__
+                        as={"div"}
+                        hasGap={true}
+                        className={classNames(
+                          projectcss.all,
+                          sty.column__v4B1F
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__sTSy
+                          )}
+                        >
+                          <h4
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.h4,
+                              projectcss.__wab_text,
+                              sty.h4___5MAl
+                            )}
+                          >
+                            {"Tour Details"}
+                          </h4>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__sBsl9
+                            )}
+                          >
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return $ctx.tourlist.find(
+                                    tour => tour.id === $ctx.params.slug
+                                  ).description;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "Tour Details";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          </div>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__uhH6
+                          )}
+                        >
+                          {(() => {
+                            const child$Props = {
+                              beforeChange:
+                                generateStateOnChangePropForCodeComponents(
+                                  $state,
+                                  "currentSlide",
+                                  ["sliderCarousel", "currentSlide"],
+                                  SliderWrapper_Helpers
+                                ),
+                              className: classNames(
+                                "__wab_instance",
+                                sty.sliderCarousel
+                              ),
+                              initialSlide: generateStateValueProp($state, [
+                                "sliderCarousel",
+                                "currentSlide"
+                              ]),
+                              ref: ref => {
+                                $refs["sliderCarousel"] = ref;
+                              },
+                              sliderScopeClassName:
+                                sty["sliderCarousel__slider"]
+                            };
+                            initializeCodeComponentStates(
+                              $state,
+                              [
+                                {
+                                  name: "currentSlide",
+                                  plasmicStateName:
+                                    "sliderCarousel.currentSlide"
+                                }
+                              ],
+                              [],
+                              SliderWrapper_Helpers ?? {},
+                              child$Props
+                            );
+
+                            return (
+                              <SliderWrapper
+                                data-plasmic-name={"sliderCarousel"}
+                                data-plasmic-override={overrides.sliderCarousel}
+                                {...child$Props}
+                              >
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox__vtzJn
+                                  )}
+                                >
+                                  <PlasmicImg__
+                                    alt={""}
+                                    className={classNames(sty.img__tgVyT)}
+                                    displayHeight={"auto"}
+                                    displayMaxHeight={"none"}
+                                    displayMaxWidth={"100%"}
+                                    displayMinHeight={"0"}
+                                    displayMinWidth={"0"}
+                                    displayWidth={"auto"}
+                                    src={{
+                                      src: "/plasmic/penida_tour_host/images/imageTour1Jpg.jpg",
+                                      fullWidth: 600,
+                                      fullHeight: 600,
+                                      aspectRatio: undefined
+                                    }}
+                                  />
+                                </div>
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox__cdCbz
+                                  )}
+                                >
+                                  <PlasmicImg__
+                                    alt={""}
+                                    className={classNames(sty.img___3Jzc)}
+                                    displayHeight={"auto"}
+                                    displayMaxHeight={"none"}
+                                    displayMaxWidth={"100%"}
+                                    displayMinHeight={"0"}
+                                    displayMinWidth={"0"}
+                                    displayWidth={"auto"}
+                                    src={{
+                                      src: "/plasmic/penida_tour_host/images/imageTour1Jpg.jpg",
+                                      fullWidth: 600,
+                                      fullHeight: 600,
+                                      aspectRatio: undefined
+                                    }}
+                                  />
+                                </div>
+                              </SliderWrapper>
+                            );
+                          })()}
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__sNhHz
+                          )}
+                        >
+                          <h4
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.h4,
+                              projectcss.__wab_text,
+                              sty.h4__vDjVj
+                            )}
+                          >
+                            {"Itineraries "}
+                          </h4>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__aeWKs
+                            )}
+                          >
+                            {(_par =>
+                              !_par ? [] : Array.isArray(_par) ? _par : [_par])(
+                              (() => {
+                                try {
+                                  return $ctx.tourlist.find(
+                                    tour => tour.id === $ctx.params.slug
+                                  ).itineraries;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return [];
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                              const currentItem = __plasmic_item_0;
+                              const currentIndex = __plasmic_idx_0;
+                              return (
+                                <Stack__
+                                  as={"div"}
+                                  hasGap={true}
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox__cvvSu
+                                  )}
+                                  key={currentIndex}
+                                >
+                                  <Icon2Icon
+                                    className={classNames(
+                                      projectcss.all,
+                                      sty.svg__vgYdy
+                                    )}
+                                    role={"img"}
+                                  />
+
+                                  <Stack__
+                                    as={"div"}
+                                    hasGap={true}
+                                    className={classNames(
+                                      projectcss.all,
+                                      sty.freeBox__vgrYa
+                                    )}
+                                  >
+                                    <h6
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.h6,
+                                        projectcss.__wab_text,
+                                        sty.h6__lgLae
+                                      )}
+                                    >
+                                      <React.Fragment>
+                                        {(() => {
+                                          try {
+                                            return currentItem.time;
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return "";
+                                            }
+                                            throw e;
+                                          }
+                                        })()}
+                                      </React.Fragment>
+                                    </h6>
+                                    <div
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.__wab_text,
+                                        sty.text__kejy3
+                                      )}
+                                    >
+                                      <React.Fragment>
+                                        {(() => {
+                                          try {
+                                            return currentItem.activity;
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return "";
+                                            }
+                                            throw e;
+                                          }
+                                        })()}
+                                      </React.Fragment>
+                                    </div>
+                                  </Stack__>
+                                </Stack__>
+                              );
+                            })}
+                          </div>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__oGuw7
+                          )}
+                        >
+                          <h4
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.h4,
+                              projectcss.__wab_text,
+                              sty.h4__c4S33
+                            )}
+                          >
+                            {"Whats Included"}
+                          </h4>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__zdzgq
+                            )}
+                          >
+                            {(_par =>
+                              !_par ? [] : Array.isArray(_par) ? _par : [_par])(
+                              (() => {
+                                try {
+                                  return $ctx.tourlist.find(
+                                    tour => tour.id === $ctx.params.slug
+                                  ).whats_included;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return [];
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                              const currentItem = __plasmic_item_0;
+                              const currentIndex = __plasmic_idx_0;
+                              return (
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox__bAixW
+                                  )}
+                                  key={currentIndex}
+                                >
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__uLbdJ
+                                    )}
+                                  >
+                                    <React.Fragment>
+                                      {(() => {
+                                        try {
+                                          return currentItem;
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return "";
+                                          }
+                                          throw e;
+                                        }
+                                      })()}
+                                    </React.Fragment>
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__vyuXc
+                          )}
+                        >
+                          <h4
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.h4,
+                              projectcss.__wab_text,
+                              sty.h4__inX3C
+                            )}
+                          >
+                            {"Whats Excluded"}
+                          </h4>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__wkiVj
+                            )}
+                          >
+                            {(_par =>
+                              !_par ? [] : Array.isArray(_par) ? _par : [_par])(
+                              (() => {
+                                try {
+                                  return $ctx.tourlist.find(
+                                    tour => tour.id === $ctx.params.slug
+                                  ).whats_excluded;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return [];
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                              const currentItem = __plasmic_item_0;
+                              const currentIndex = __plasmic_idx_0;
+                              return (
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox__qkIci
+                                  )}
+                                  key={currentIndex}
+                                >
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__odWqq
+                                    )}
+                                  >
+                                    <React.Fragment>
+                                      {(() => {
+                                        try {
+                                          return currentItem;
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return "";
+                                          }
+                                          throw e;
+                                        }
+                                      })()}
+                                    </React.Fragment>
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      </Stack__>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.column__mqyrU
+                        )}
+                      >
+                        <Stack__
+                          as={"div"}
+                          hasGap={true}
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__xs7Hq
+                          )}
+                        >
+                          <h4
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.h4,
+                              projectcss.__wab_text,
+                              sty.h4__ylNic
+                            )}
+                          >
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return $ctx.tourlist.find(
+                                    tour => tour.id === $ctx.params.slug
+                                  ).price_per_person;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "Tour Details";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          </h4>
+                          <h6
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.h6,
+                              projectcss.__wab_text,
+                              sty.h6__wbrf3
+                            )}
+                          >
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return (
+                                    $ctx.tourlist.find(
+                                      tour => tour.id === $ctx.params.slug
+                                    ).minimum_people + " / Pack"
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "Tour Details";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          </h6>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__cjr2Z
+                            )}
+                          >
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return $ctx.tourlist.find(
+                                    tour => tour.id === $ctx.params.slug
+                                  ).cancellation_policy;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "Tour Details";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__wlC2B
+                            )}
+                          >
+                            <Button
+                              data-plasmic-name={"button"}
+                              data-plasmic-override={overrides.button}
+                              className={classNames(
+                                "__wab_instance",
+                                sty.button
+                              )}
+                              color={"yellow"}
+                            >
+                              {"Book Now"}
+                            </Button>
+                          </div>
+                        </Stack__>
+                      </div>
+                    </Stack__>
+                  </section>
+                </React.Fragment>
               )}
             </DataCtxReader__>
           </DataProvider>
@@ -279,17 +1158,47 @@ function PlasmicTourPackage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "dataProvider", "h1"],
-  dataProvider: ["dataProvider", "h1"],
-  h1: ["h1"]
+  root: [
+    "root",
+    "navigationBar",
+    "dataProvider",
+    "hero",
+    "h1",
+    "details",
+    "columns",
+    "sliderCarousel",
+    "button"
+  ],
+  navigationBar: ["navigationBar"],
+  dataProvider: [
+    "dataProvider",
+    "hero",
+    "h1",
+    "details",
+    "columns",
+    "sliderCarousel",
+    "button"
+  ],
+  hero: ["hero", "h1"],
+  h1: ["h1"],
+  details: ["details", "columns", "sliderCarousel", "button"],
+  columns: ["columns", "sliderCarousel", "button"],
+  sliderCarousel: ["sliderCarousel"],
+  button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  navigationBar: typeof NavigationBar;
   dataProvider: typeof DataProvider;
+  hero: "section";
   h1: "h1";
+  details: "section";
+  columns: "div";
+  sliderCarousel: typeof SliderWrapper;
+  button: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -352,8 +1261,14 @@ export const PlasmicTourPackage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    navigationBar: makeNodeComponent("navigationBar"),
     dataProvider: makeNodeComponent("dataProvider"),
+    hero: makeNodeComponent("hero"),
     h1: makeNodeComponent("h1"),
+    details: makeNodeComponent("details"),
+    columns: makeNodeComponent("columns"),
+    sliderCarousel: makeNodeComponent("sliderCarousel"),
+    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicTourPackage
     internalVariantProps: PlasmicTourPackage__VariantProps,
