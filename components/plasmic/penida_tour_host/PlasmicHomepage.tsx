@@ -446,7 +446,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   Package_name: "West Nusapenida Tour",
                   Desc: "Explore the most popular places in nusa penida : klingking beach, Broken Beach, Angel billabong and Crystal bay",
                   "Featured Image":
-                    "https://penidatourhost.vercel.app/plasmic/penida_tour_host/images/cover-west penida.jpeg",
+                    "/plasmic/penida_tour_host/images/cover-west penida.jpeg",
                   Price: "Rp 825.000 "
                 },
                 {
