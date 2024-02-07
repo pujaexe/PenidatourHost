@@ -62,7 +62,7 @@ import {
 import { NavigationBar } from "@plasmicpkgs/plasmic-nav";
 import { Reveal } from "@plasmicpkgs/react-awesome-reveal";
 import Button from "../../Button"; // plasmic-import: ZzYHWFOP3W93/component
-import { DataProvider } from "@plasmicpkgs/plasmic-basic-components";
+import { CmsQueryRepeater } from "@plasmicpkgs/plasmic-cms";
 
 import { useScreenVariants as useScreenVariantst5XXltJfKzLl } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: T5xXLTJfKZLl/globalVariant
 
@@ -89,11 +89,12 @@ export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
   navigationBar?: Flex__<typeof NavigationBar>;
   hero?: Flex__<"section">;
+  h6?: Flex__<"h6">;
   why?: Flex__<"section">;
   columns?: Flex__<"div">;
   article?: Flex__<"article">;
   tour?: Flex__<"section">;
-  dataProvider?: Flex__<typeof DataProvider>;
+  cmsDataFetcher?: Flex__<typeof CmsQueryRepeater>;
   h5?: Flex__<"h5">;
   section?: Flex__<"section">;
   h3?: Flex__<"h3">;
@@ -293,11 +294,13 @@ function PlasmicHomepage__RenderFunc(props: {
                 className={classNames(projectcss.all, sty.freeBox__xYcfp)}
               >
                 <h6
+                  data-plasmic-name={"h6"}
+                  data-plasmic-override={overrides.h6}
                   className={classNames(
                     projectcss.all,
                     projectcss.h6,
                     projectcss.__wab_text,
-                    sty.h6__s3DQu
+                    sty.h6
                   )}
                 >
                   {"nusapenidatourhost.com"}
@@ -436,86 +439,64 @@ function PlasmicHomepage__RenderFunc(props: {
             className={classNames(projectcss.all, sty.tour)}
             id={"packages"}
           >
-            <DataProvider
-              data-plasmic-name={"dataProvider"}
-              data-plasmic-override={overrides.dataProvider}
-              className={classNames("__wab_instance", sty.dataProvider)}
-              data={[
-                {
-                  id: "01",
-                  Package_name: "West Nusapenida Tour",
-                  Desc: "Explore the most popular places in nusa penida : klingking beach, Broken Beach, Angel billabong and Crystal bay",
-                  "Featured Image":
-                    "/plasmic/penida_tour_host/images/cover-west penida.jpeg",
-                  Price: "Rp 825.000 "
-                },
-                {
-                  id: "02",
-                  Package_name: "East Nusapenida Tour",
-                  Desc: "Tour East Nusa Penida  Visit the famous Tree House \u2013 Diamond beach, Atuh and many  More",
-                  "Featured Image":
-                    "/plasmic/penida_tour_host/images/nusapenidaHomeMinjpg.jpg",
-                  Price: "Rp 875.000"
-                },
-                {
-                  id: "03",
-                  Package_name: "West Nusapenida Tour  Include snorkeling ",
-                  Desc: "Tour East Nusa Penida  Visit the famous Tree House \u2013 Diamond beach, Atuh and many  More",
-                  "Featured Image":
-                    "/plasmic/penida_tour_host/images/nusapenidaHomeMinjpg.jpg",
-                  Price: "Rp 1.125.000"
-                },
-                {
-                  id: "04",
-                  Package_name: "Mount Batur Sunrise jeep tour",
-                  Desc: "This tour is to explore the most beautiful sunrise form the slope of the mount Batur, to search the sunrise you do not need to walk very early",
-                  "Featured Image":
-                    "/plasmic/penida_tour_host/images/nusapenidaHomeMinjpg.jpg",
-                  Price: "Rp 300,000"
-                }
-              ]}
-              name={"package-list"}
-            >
-              <DataCtxReader__>
-                {$ctx => (
-                  <React.Fragment>
+            <CmsQueryRepeater
+              data-plasmic-name={"cmsDataFetcher"}
+              data-plasmic-override={overrides.cmsDataFetcher}
+              className={classNames("__wab_instance", sty.cmsDataFetcher)}
+              desc={false}
+              emptyMessage={
+                <DataCtxReader__>
+                  {$ctx => (
                     <div
                       className={classNames(
                         projectcss.all,
-                        sty.freeBox___6Igve
+                        projectcss.__wab_text,
+                        sty.text__nL6T
                       )}
                     >
-                      <h1
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.h1,
-                          projectcss.__wab_text,
-                          sty.h1__eaKiQ
-                        )}
-                      >
-                        {"Our Package"}
-                      </h1>
-                      <h6
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.h6,
-                          projectcss.__wab_text,
-                          sty.h6__w9DQn
-                        )}
-                      >
-                        {
-                          "we always make our customers happy by providing many choices"
-                        }
-                      </h6>
+                      {"No matching published entries found."}
                     </div>
+                  )}
+                </DataCtxReader__>
+              }
+              forceEmptyState={false}
+              forceLoadingState={false}
+              limit={0}
+              loadingMessage={
+                <DataCtxReader__>
+                  {$ctx => (
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__ykcpZ)}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__uvmat
+                      )}
+                    >
+                      {"Loading..."}
+                    </div>
+                  )}
+                </DataCtxReader__>
+              }
+              mode={"rows"}
+              noAutoRepeat={true}
+              noLayout={false}
+              orderBy={"packageId"}
+              table={"tourPackage"}
+              useDraft={false}
+            >
+              <DataCtxReader__>
+                {$ctx => (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox___2Qegb)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__h1KJ5)}
                     >
                       {(_par =>
                         !_par ? [] : Array.isArray(_par) ? _par : [_par])(
                         (() => {
                           try {
-                            return $ctx["package-list"];
+                            return $ctx.plasmicCmsTourPackageCollection;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
@@ -534,12 +515,12 @@ function PlasmicHomepage__RenderFunc(props: {
                             className={classNames(
                               projectcss.all,
                               projectcss.a,
-                              sty.link__oAau8
+                              sty.link__s000Y
                             )}
                             component={Link}
                             href={`/${(() => {
                               try {
-                                return currentItem.id;
+                                return currentItem.data.packageId;
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||
@@ -555,7 +536,7 @@ function PlasmicHomepage__RenderFunc(props: {
                           >
                             <PlasmicImg__
                               alt={""}
-                              className={classNames(sty.img___78JBx)}
+                              className={classNames(sty.img___3TgA0)}
                               displayHeight={"210px"}
                               displayMaxHeight={"none"}
                               displayMaxWidth={
@@ -581,19 +562,14 @@ function PlasmicHomepage__RenderFunc(props: {
                               loading={"lazy"}
                               src={(() => {
                                 try {
-                                  return currentItem["Featured Image"];
+                                  return currentItem.data.featureImage.url;
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
                                     e?.plasmicType ===
                                       "PlasmicUndefinedDataError"
                                   ) {
-                                    return {
-                                      src: "/plasmic/penida_tour_host/images/coverWestPenidajpeg.jpg",
-                                      fullWidth: 768,
-                                      fullHeight: 1024,
-                                      aspectRatio: undefined
-                                    };
+                                    return undefined;
                                   }
                                   throw e;
                                 }
@@ -605,7 +581,7 @@ function PlasmicHomepage__RenderFunc(props: {
                               hasGap={true}
                               className={classNames(
                                 projectcss.all,
-                                sty.freeBox__encUo
+                                sty.freeBox__jvCsR
                               )}
                             >
                               <h5
@@ -621,7 +597,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                 <React.Fragment>
                                   {(() => {
                                     try {
-                                      return currentItem.Package_name;
+                                      return currentItem.data.packageName;
                                     } catch (e) {
                                       if (
                                         e instanceof TypeError ||
@@ -640,61 +616,67 @@ function PlasmicHomepage__RenderFunc(props: {
                                   projectcss.all,
                                   projectcss.h4,
                                   projectcss.__wab_text,
-                                  sty.h4__gGevS
+                                  sty.h4__xcMXk
                                 )}
                               >
-                                <React.Fragment>
-                                  {(() => {
-                                    try {
-                                      return currentItem.Price;
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return "";
+                                <div
+                                  className={projectcss.__wab_expr_html_text}
+                                  dangerouslySetInnerHTML={{
+                                    __html: (() => {
+                                      try {
+                                        return currentItem.data.pricePerPerson;
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return "";
+                                        }
+                                        throw e;
                                       }
-                                      throw e;
-                                    }
-                                  })()}
-                                </React.Fragment>
+                                    })()
+                                  }}
+                                />
                               </h4>
                               <div
                                 className={classNames(
                                   projectcss.all,
                                   projectcss.__wab_text,
-                                  sty.text__bFu2K
+                                  sty.text__bRbj
                                 )}
                               >
-                                <React.Fragment>
-                                  {(() => {
-                                    try {
-                                      return currentItem.Desc;
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return "";
+                                <div
+                                  className={projectcss.__wab_expr_html_text}
+                                  dangerouslySetInnerHTML={{
+                                    __html: (() => {
+                                      try {
+                                        return currentItem.data.description;
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return "";
+                                        }
+                                        throw e;
                                       }
-                                      throw e;
-                                    }
-                                  })()}
-                                </React.Fragment>
+                                    })()
+                                  }}
+                                />
                               </div>
                             </Stack__>
                             <div
                               className={classNames(
                                 projectcss.all,
-                                sty.freeBox__ySuri
+                                sty.freeBox__jvyZk
                               )}
                             >
                               <Button
                                 className={classNames(
                                   "__wab_instance",
-                                  sty.button___4FvIx
+                                  sty.button__zyDsr
                                 )}
                                 color={"yellow"}
                               >
@@ -702,7 +684,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                   className={classNames(
                                     projectcss.all,
                                     projectcss.__wab_text,
-                                    sty.text__rKVt
+                                    sty.text__lDQdk
                                   )}
                                 >
                                   {"See Details"}
@@ -713,10 +695,10 @@ function PlasmicHomepage__RenderFunc(props: {
                         );
                       })}
                     </div>
-                  </React.Fragment>
+                  </div>
                 )}
               </DataCtxReader__>
-            </DataProvider>
+            </CmsQueryRepeater>
           </section>
           <section
             data-plasmic-name={"section"}
@@ -758,22 +740,24 @@ const PlasmicDescendants = {
     "root",
     "navigationBar",
     "hero",
+    "h6",
     "why",
     "columns",
     "article",
     "tour",
-    "dataProvider",
+    "cmsDataFetcher",
     "h5",
     "section",
     "h3"
   ],
   navigationBar: ["navigationBar"],
-  hero: ["hero"],
+  hero: ["hero", "h6"],
+  h6: ["h6"],
   why: ["why", "columns", "article"],
   columns: ["columns", "article"],
   article: ["article"],
-  tour: ["tour", "dataProvider", "h5"],
-  dataProvider: ["dataProvider", "h5"],
+  tour: ["tour", "cmsDataFetcher", "h5"],
+  cmsDataFetcher: ["cmsDataFetcher", "h5"],
   h5: ["h5"],
   section: ["section", "h3"],
   h3: ["h3"]
@@ -785,11 +769,12 @@ type NodeDefaultElementType = {
   root: "div";
   navigationBar: typeof NavigationBar;
   hero: "section";
+  h6: "h6";
   why: "section";
   columns: "div";
   article: "article";
   tour: "section";
-  dataProvider: typeof DataProvider;
+  cmsDataFetcher: typeof CmsQueryRepeater;
   h5: "h5";
   section: "section";
   h3: "h3";
@@ -857,11 +842,12 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     navigationBar: makeNodeComponent("navigationBar"),
     hero: makeNodeComponent("hero"),
+    h6: makeNodeComponent("h6"),
     why: makeNodeComponent("why"),
     columns: makeNodeComponent("columns"),
     article: makeNodeComponent("article"),
     tour: makeNodeComponent("tour"),
-    dataProvider: makeNodeComponent("dataProvider"),
+    cmsDataFetcher: makeNodeComponent("cmsDataFetcher"),
     h5: makeNodeComponent("h5"),
     section: makeNodeComponent("section"),
     h3: makeNodeComponent("h3"),

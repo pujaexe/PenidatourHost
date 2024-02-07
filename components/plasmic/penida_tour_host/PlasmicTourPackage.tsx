@@ -60,7 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { NavigationBar } from "@plasmicpkgs/plasmic-nav";
-import { DataProvider } from "@plasmicpkgs/plasmic-basic-components";
+import { CmsQueryRepeater } from "@plasmicpkgs/plasmic-cms";
 import { SliderWrapper } from "@plasmicpkgs/react-slick";
 import { sliderHelpers as SliderWrapper_Helpers } from "@plasmicpkgs/react-slick";
 import Button from "../../Button"; // plasmic-import: ZzYHWFOP3W93/component
@@ -91,7 +91,6 @@ export const PlasmicTourPackage__ArgProps = new Array<ArgPropType>();
 export type PlasmicTourPackage__OverridesType = {
   root?: Flex__<"div">;
   navigationBar?: Flex__<typeof NavigationBar>;
-  dataProvider?: Flex__<typeof DataProvider>;
   hero?: Flex__<"section">;
   h1?: Flex__<"h1">;
   details?: Flex__<"section">;
@@ -297,192 +296,46 @@ function PlasmicTourPackage__RenderFunc(props: {
             responsiveBreakpoint={768}
           />
 
-          <DataProvider
-            data-plasmic-name={"dataProvider"}
-            data-plasmic-override={overrides.dataProvider}
-            className={classNames("__wab_instance", sty.dataProvider)}
-            data={[
-              {
-                id: "01",
-                package_name: "West Nusapenida tour",
-                feature_image: "/section2-min.jpg",
-                images: [
-                  "http://www.image.com",
-                  "http://www.image.com",
-                  "http://www.image.com"
-                ],
-                description:
-                  "Explore the most popular places in nusa penida : klingking beach, Broken Beach, Angel billabong and Crystal bay",
-                price_per_person: "IDR 825.000",
-                minimum_people: "2 Person",
-                itineraries: [
-                  { time: "06:00 AM", activity: "Pick up time" },
-                  { time: "07:00 AM", activity: "Arrive sanur harbor" },
-                  { time: "07:30 AM", activity: "Boarding pass" },
-                  { time: "07:45 AM", activity: "Leave Sanur" },
-                  {
-                    time: "09:00 AM",
-                    activity: "Arrive in Nusa Penida Island at Buyuk harbor"
-                  },
-                  { time: "10:00 AM", activity: "Explore Kelingking Beach" },
-                  {
-                    time: "11:00 AM",
-                    activity: "Visit Broken Beach and Angel Billabong"
-                  },
-                  { time: "12:15 PM", activity: "Lunch at Restaurant" },
-                  { time: "01:40 PM", activity: "Swim at Crystal Bay" },
-                  { time: "03:15 PM", activity: "Back to Buyuk Harbor" },
-                  { time: "04:00 PM", activity: "Depart to Sanur Harbor" },
-                  {
-                    time: "05:20 PM",
-                    activity: "Back to accommodation drop to the Hotel"
-                  }
-                ],
-                whats_included: [
-                  "Speed Boat To Nusa Penida",
-                  "Entrance Fees",
-                  "English speaking guide",
-                  "Hotel pickup and drop off"
-                ],
-                whats_excluded: ["Personal Expenses", "Meals"],
-                cancellation_policy: "Free Cancellation Before 24 hour"
-              },
-              {
-                id: "02",
-                package_name: "East Nusapeida tour",
-                feature_image: "/path/to/feature/image.jpg",
-                images: [
-                  "http://www.example-image1.com",
-                  "http://www.example-image2.com",
-                  "http://www.example-image3.com"
-                ],
-                description:
-                  "Tour East Nusa Penida Visit the famous Tree House \u2013 Diamond beach, Atuh and many More",
-                price_per_person: "IDR 875.000",
-                minimum_people: "2 Person",
-                itineraries: [
-                  { time: "06:00 AM", activity: "Pick up time" },
-                  { time: "07:00 AM", activity: "Arrive sanur harbor" },
-                  { time: "07:30 AM", activity: "Boarding pass" },
-                  { time: "07:45 AM", activity: "Leave Sanur" },
-                  {
-                    time: "09:00 AM",
-                    activity: "Arrive in Nusa Penida Island at Buyuk harbor"
-                  },
-                  { time: "09:30 AM", activity: "Arrive at Tree house" },
-                  { time: "11:00 AM", activity: "Arrive at Diamond beach" },
-                  { time: "12:15 PM", activity: "Lunch at Restaurant" },
-                  { time: "01:30 PM", activity: "Arrive at Atuh Beach" },
-                  { time: "03:30 PM", activity: "Back to harbor" },
-                  { time: "04:30 PM", activity: "Return to Sanur Harbor" },
-                  {
-                    time: "05:30 PM",
-                    activity: "Arrive at Sanur and driver back to hotel"
-                  }
-                ],
-                whats_included: [],
-                whats_excluded: [],
-                cancellation_policy: "Free Cancellation Before 24 hours"
-              },
-              {
-                id: "03",
-                package_name: "West Nusapenida Snorkeling Tour",
-                feature_image: "/path/to/feature/image.jpg",
-                images: [
-                  "http://www.example-snorkel1.com",
-                  "http://www.example-snorkel2.com",
-                  "http://www.example-snorkel3.com"
-                ],
-                description:
-                  "Explore West Nusapenida with an exciting snorkeling adventure, including a visit to Manta ray snorkeling spots and other beautiful locations such as Gamet Bay and SD Point.",
-                price_per_person: "IDR 1.125.000",
-                minimum_people: "1 Person",
-                itineraries: [
-                  { time: "06:00 AM", activity: "Pick up time" },
-                  { time: "07:00 AM", activity: "Arrive at sanur harbor" },
-                  {
-                    time: "07:30 AM",
-                    activity: "Crossing to Nusapenida with speed boat"
-                  },
-                  { time: "09:00 AM", activity: "Arrive at Buyuk harbor" },
-                  {
-                    time: "09:30 AM",
-                    activity: "Fitting the snorkeling equipment"
-                  },
-                  {
-                    time: "10:00 AM",
-                    activity: "Get ready to snorkeling at Manta ray"
-                  },
-                  { time: "11:00 AM", activity: "Finish at manta ray" },
-                  { time: "11:15 AM", activity: "Arrive at Gamet bay point" },
-                  { time: "12:00 PM", activity: "Depart to SD point" },
-                  { time: "12:15 PM", activity: "Arrive at SD point" },
-                  {
-                    time: "01:00 PM",
-                    activity: "Finish snorkeling \u2013 change clothes"
-                  },
-                  { time: "02:30 PM", activity: "Depart to Kelingking Beach" },
-                  {
-                    time: "03:30 PM",
-                    activity: "Go to Broken Beach and Angel Billabong"
-                  },
-                  { time: "04:15 PM", activity: "Arrive at Buyuk harbor" },
-                  { time: "04:30 PM", activity: "Back to sanur" },
-                  {
-                    time: "05:30 PM",
-                    activity: "Arrive at sanur and back to hotel"
-                  }
-                ],
-                whats_included: [
-                  "Free Pick up at  Sanur, Denpasar, Nusadua, Jimbaran, Kuta, Seminyak, Legian, Canggu , Ubud "
-                ],
-                whats_excluded: [
-                  "Extra Pickup at Candidasa , Amed, Kintamani, Tulamben"
-                ],
-                cancellation_policy: "Free Cancellation Before 24 hours"
-              },
-              {
-                id: "04",
-                package_name: "Mount Batur Sunrise Jeep Tour",
-                feature_image: "/path/to/feature/image.jpg",
-                images: [
-                  "http://www.example-jeep1.com",
-                  "http://www.example-jeep2.com",
-                  "http://www.example-jeep3.com"
-                ],
-                description:
-                  "Experience the breathtaking sunrise from the slope of Mount Batur with a classic jeep ride to the sunrise point at 1,560m above sea level. Enjoy a light breakfast and hot beverages while you witness the sun rising, followed by a tour of the south volcano's black lava.",
-                price_per_person: "IDR 300,000",
-                maximum_people: "3 Pax per Jeep",
-                itineraries: [
-                  {
-                    time: "04:15 AM",
-                    activity:
-                      "Meeting point and briefing at Volcano rim Glamping"
-                  },
-                  { time: "04:30 AM", activity: "Drive to the sunrise point" },
-                  { time: "05:00 AM", activity: "Arrive at the sunrise point" },
-                  { time: "05:30 AM - 06:00 AM", activity: "Sunrise" },
-                  { time: "07:00 AM", activity: "Leave the sunrise point" },
-                  {
-                    time: "07:30 AM",
-                    activity: "Arrive at The Black Lava / frozen Lava"
-                  },
-                  {
-                    time: "08:30 AM",
-                    activity: "Drive back to the Volcano rim"
-                  },
-                  { time: "09:00 AM", activity: "Finish" }
-                ],
-                whats_included: [],
-                whats_excluded: [
-                  "Additional Charge for pickup at Hotel ubud : 500.000",
-                  "Sanur, Kuta, seminyak, Jimbaran, canggu, Candi dasa 550.000/ car max 5 pax"
-                ],
-                cancellation_policy: "Free Cancellation Before 24 hours"
-              }
-            ]}
-            name={"tourlist"}
+          <CmsQueryRepeater
+            className={classNames("__wab_instance", sty.cmsDataFetcher__ancfu)}
+            desc={false}
+            emptyMessage={
+              <DataCtxReader__>
+                {$ctx => (
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___7GdW
+                    )}
+                  >
+                    {"No matching published entries found."}
+                  </div>
+                )}
+              </DataCtxReader__>
+            }
+            forceEmptyState={false}
+            forceLoadingState={false}
+            limit={0}
+            loadingMessage={
+              <DataCtxReader__>
+                {$ctx => (
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__lNjDc
+                    )}
+                  >
+                    {"Loading..."}
+                  </div>
+                )}
+              </DataCtxReader__>
+            }
+            noAutoRepeat={true}
+            noLayout={false}
+            table={"tourPackage"}
+            useDraft={false}
           >
             <DataCtxReader__>
               {$ctx => (
@@ -510,9 +363,9 @@ function PlasmicTourPackage__RenderFunc(props: {
                         <React.Fragment>
                           {(() => {
                             try {
-                              return $ctx.tourlist.find(
-                                tour => tour.id === $ctx.params.slug
-                              ).package_name;
+                              return $ctx.plasmicCmsTourPackageCollection.find(
+                                item => item.data.packageId === $ctx.params.slug
+                              ).data.packageName;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -631,24 +484,28 @@ function PlasmicTourPackage__RenderFunc(props: {
                               sty.text__sBsl9
                             )}
                           >
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return $ctx.tourlist.find(
-                                    tour => tour.id === $ctx.params.slug
-                                  ).description;
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return "Tour Details";
+                            <div
+                              className={projectcss.__wab_expr_html_text}
+                              dangerouslySetInnerHTML={{
+                                __html: (() => {
+                                  try {
+                                    return $ctx.plasmicCmsTourPackageCollection.find(
+                                      item =>
+                                        item.data.packageId === $ctx.params.slug
+                                    ).data.description;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return "Tour Details";
+                                    }
+                                    throw e;
                                   }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
+                                })()
+                              }}
+                            />
                           </div>
                         </div>
                         <div
@@ -657,98 +514,249 @@ function PlasmicTourPackage__RenderFunc(props: {
                             sty.freeBox__uhH6
                           )}
                         >
-                          {(() => {
-                            const child$Props = {
-                              beforeChange:
-                                generateStateOnChangePropForCodeComponents(
-                                  $state,
-                                  "currentSlide",
-                                  ["sliderCarousel", "currentSlide"],
-                                  SliderWrapper_Helpers
-                                ),
-                              className: classNames(
-                                "__wab_instance",
-                                sty.sliderCarousel
-                              ),
-                              initialSlide: generateStateValueProp($state, [
-                                "sliderCarousel",
-                                "currentSlide"
-                              ]),
-                              ref: ref => {
-                                $refs["sliderCarousel"] = ref;
-                              },
-                              sliderScopeClassName:
-                                sty["sliderCarousel__slider"]
-                            };
-                            initializeCodeComponentStates(
-                              $state,
-                              [
-                                {
-                                  name: "currentSlide",
-                                  plasmicStateName:
-                                    "sliderCarousel.currentSlide"
+                          <CmsQueryRepeater
+                            className={classNames(
+                              "__wab_instance",
+                              sty.cmsDataFetcher__edPv5
+                            )}
+                            desc={false}
+                            emptyMessage={
+                              <DataCtxReader__>
+                                {$ctx => (
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__uZgCj
+                                    )}
+                                  >
+                                    {"No matching published entries found."}
+                                  </div>
+                                )}
+                              </DataCtxReader__>
+                            }
+                            filterField={"packageId"}
+                            filterValue={(() => {
+                              try {
+                                return $ctx.params.slug;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
                                 }
-                              ],
-                              [],
-                              SliderWrapper_Helpers ?? {},
-                              child$Props
-                            );
+                                throw e;
+                              }
+                            })()}
+                            forceEmptyState={false}
+                            forceLoadingState={false}
+                            limit={0}
+                            loadingMessage={
+                              <DataCtxReader__>
+                                {$ctx => (
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text___9Vp7M
+                                    )}
+                                  >
+                                    {"Loading..."}
+                                  </div>
+                                )}
+                              </DataCtxReader__>
+                            }
+                            noAutoRepeat={true}
+                            noLayout={false}
+                            table={"imagePackage"}
+                            useDraft={false}
+                          >
+                            <DataCtxReader__>
+                              {$ctx =>
+                                (() => {
+                                  const child$Props = {
+                                    beforeChange:
+                                      generateStateOnChangePropForCodeComponents(
+                                        $state,
+                                        "currentSlide",
+                                        ["sliderCarousel", "currentSlide"],
+                                        SliderWrapper_Helpers
+                                      ),
+                                    className: classNames(
+                                      "__wab_instance",
+                                      sty.sliderCarousel
+                                    ),
+                                    initialSlide: generateStateValueProp(
+                                      $state,
+                                      ["sliderCarousel", "currentSlide"]
+                                    ),
+                                    ref: ref => {
+                                      $refs["sliderCarousel"] = ref;
+                                    },
+                                    sliderScopeClassName:
+                                      sty["sliderCarousel__slider"]
+                                  };
+                                  initializeCodeComponentStates(
+                                    $state,
+                                    [
+                                      {
+                                        name: "currentSlide",
+                                        plasmicStateName:
+                                          "sliderCarousel.currentSlide"
+                                      }
+                                    ],
+                                    [],
+                                    SliderWrapper_Helpers ?? {},
+                                    child$Props
+                                  );
 
-                            return (
-                              <SliderWrapper
-                                data-plasmic-name={"sliderCarousel"}
-                                data-plasmic-override={overrides.sliderCarousel}
-                                {...child$Props}
-                              >
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    sty.freeBox__vtzJn
-                                  )}
-                                >
-                                  <PlasmicImg__
-                                    alt={""}
-                                    className={classNames(sty.img__tgVyT)}
-                                    displayHeight={"auto"}
-                                    displayMaxHeight={"none"}
-                                    displayMaxWidth={"100%"}
-                                    displayMinHeight={"0"}
-                                    displayMinWidth={"0"}
-                                    displayWidth={"auto"}
-                                    src={{
-                                      src: "/plasmic/penida_tour_host/images/imageTour1Jpg.jpg",
-                                      fullWidth: 600,
-                                      fullHeight: 600,
-                                      aspectRatio: undefined
-                                    }}
-                                  />
-                                </div>
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    sty.freeBox__cdCbz
-                                  )}
-                                >
-                                  <PlasmicImg__
-                                    alt={""}
-                                    className={classNames(sty.img___3Jzc)}
-                                    displayHeight={"auto"}
-                                    displayMaxHeight={"none"}
-                                    displayMaxWidth={"100%"}
-                                    displayMinHeight={"0"}
-                                    displayMinWidth={"0"}
-                                    displayWidth={"auto"}
-                                    src={{
-                                      src: "/plasmic/penida_tour_host/images/imageTour1Jpg.jpg",
-                                      fullWidth: 600,
-                                      fullHeight: 600,
-                                      aspectRatio: undefined
-                                    }}
-                                  />
-                                </div>
-                              </SliderWrapper>
-                            );
-                          })()}
+                                  return (
+                                    <SliderWrapper
+                                      data-plasmic-name={"sliderCarousel"}
+                                      data-plasmic-override={
+                                        overrides.sliderCarousel
+                                      }
+                                      {...child$Props}
+                                    >
+                                      <div
+                                        className={classNames(
+                                          projectcss.all,
+                                          sty.freeBox__vtzJn
+                                        )}
+                                      >
+                                        <PlasmicImg__
+                                          alt={""}
+                                          className={classNames(sty.img__tgVyT)}
+                                          displayHeight={"230px"}
+                                          displayMaxHeight={"none"}
+                                          displayMaxWidth={"100%"}
+                                          displayMinHeight={"0"}
+                                          displayMinWidth={"0"}
+                                          displayWidth={"100%"}
+                                          src={(() => {
+                                            try {
+                                              return $ctx
+                                                .plasmicCmsImagePackageCollection[0]
+                                                .data.image.img1.url;
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })()}
+                                        />
+                                      </div>
+                                      <div
+                                        className={classNames(
+                                          projectcss.all,
+                                          sty.freeBox__zjdbH
+                                        )}
+                                      >
+                                        <PlasmicImg__
+                                          alt={""}
+                                          className={classNames(sty.img__nEui2)}
+                                          displayHeight={"230px"}
+                                          displayMaxHeight={"none"}
+                                          displayMaxWidth={"100%"}
+                                          displayMinHeight={"0"}
+                                          displayMinWidth={"0"}
+                                          displayWidth={"100%"}
+                                          src={(() => {
+                                            try {
+                                              return $ctx
+                                                .plasmicCmsImagePackageCollection[0]
+                                                .data.image.img2.url;
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })()}
+                                        />
+                                      </div>
+                                      <div
+                                        className={classNames(
+                                          projectcss.all,
+                                          sty.freeBox__ujxC4
+                                        )}
+                                      >
+                                        <PlasmicImg__
+                                          alt={""}
+                                          className={classNames(sty.img__mNaWu)}
+                                          displayHeight={"230px"}
+                                          displayMaxHeight={"none"}
+                                          displayMaxWidth={"100%"}
+                                          displayMinHeight={"0"}
+                                          displayMinWidth={"0"}
+                                          displayWidth={"100%"}
+                                          src={(() => {
+                                            try {
+                                              return $ctx
+                                                .plasmicCmsImagePackageCollection[0]
+                                                .data.image.img3.url;
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })()}
+                                        />
+                                      </div>
+                                      <div
+                                        className={classNames(
+                                          projectcss.all,
+                                          sty.freeBox__ophxe
+                                        )}
+                                      >
+                                        <PlasmicImg__
+                                          alt={""}
+                                          className={classNames(sty.img__c8Ysk)}
+                                          displayHeight={"230px"}
+                                          displayMaxHeight={"none"}
+                                          displayMaxWidth={"100%"}
+                                          displayMinHeight={"0"}
+                                          displayMinWidth={"0"}
+                                          displayWidth={"100%"}
+                                          src={(() => {
+                                            try {
+                                              return $ctx
+                                                .plasmicCmsImagePackageCollection[0]
+                                                .data.image.img4.url;
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })()}
+                                        />
+                                      </div>
+                                    </SliderWrapper>
+                                  );
+                                })()
+                              }
+                            </DataCtxReader__>
+                          </CmsQueryRepeater>
                         </div>
                         <div
                           className={classNames(
@@ -766,113 +774,192 @@ function PlasmicTourPackage__RenderFunc(props: {
                           >
                             {"Itineraries "}
                           </h4>
-                          <div
+                          <CmsQueryRepeater
                             className={classNames(
-                              projectcss.all,
-                              sty.freeBox__aeWKs
+                              "__wab_instance",
+                              sty.cmsDataFetcher___8Vhvl
                             )}
-                          >
-                            {(_par =>
-                              !_par ? [] : Array.isArray(_par) ? _par : [_par])(
-                              (() => {
-                                try {
-                                  return $ctx.tourlist.find(
-                                    tour => tour.id === $ctx.params.slug
-                                  ).itineraries;
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return [];
-                                  }
-                                  throw e;
-                                }
-                              })()
-                            ).map((__plasmic_item_0, __plasmic_idx_0) => {
-                              const currentItem = __plasmic_item_0;
-                              const currentIndex = __plasmic_idx_0;
-                              return (
-                                <Stack__
-                                  as={"div"}
-                                  hasGap={true}
-                                  className={classNames(
-                                    projectcss.all,
-                                    sty.freeBox__cvvSu
-                                  )}
-                                  key={currentIndex}
-                                >
-                                  <Icon2Icon
+                            desc={false}
+                            emptyMessage={
+                              <DataCtxReader__>
+                                {$ctx => (
+                                  <div
                                     className={classNames(
                                       projectcss.all,
-                                      sty.svg__vgYdy
-                                    )}
-                                    role={"img"}
-                                  />
-
-                                  <Stack__
-                                    as={"div"}
-                                    hasGap={true}
-                                    className={classNames(
-                                      projectcss.all,
-                                      sty.freeBox__vgrYa
+                                      projectcss.__wab_text,
+                                      sty.text__idaq8
                                     )}
                                   >
-                                    <h6
-                                      className={classNames(
-                                        projectcss.all,
-                                        projectcss.h6,
-                                        projectcss.__wab_text,
-                                        sty.h6__lgLae
-                                      )}
-                                    >
-                                      <React.Fragment>
-                                        {(() => {
-                                          try {
-                                            return currentItem.time;
-                                          } catch (e) {
-                                            if (
-                                              e instanceof TypeError ||
-                                              e?.plasmicType ===
-                                                "PlasmicUndefinedDataError"
-                                            ) {
-                                              return "";
-                                            }
-                                            throw e;
+                                    {"No matching published entries found."}
+                                  </div>
+                                )}
+                              </DataCtxReader__>
+                            }
+                            fields={[]}
+                            filterField={"packageId"}
+                            filterValue={(() => {
+                              try {
+                                return $ctx.params.slug;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()}
+                            forceEmptyState={false}
+                            forceLoadingState={false}
+                            limit={0}
+                            loadingMessage={
+                              <DataCtxReader__>
+                                {$ctx => (
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text___6E07
+                                    )}
+                                  >
+                                    {"Loading..."}
+                                  </div>
+                                )}
+                              </DataCtxReader__>
+                            }
+                            noAutoRepeat={true}
+                            noLayout={false}
+                            table={"itinerariesPackage"}
+                            useDraft={false}
+                          >
+                            <DataCtxReader__>
+                              {$ctx => (
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox__jdqSe
+                                  )}
+                                >
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      sty.freeBox__aeWKs
+                                    )}
+                                  >
+                                    {(_par =>
+                                      !_par
+                                        ? []
+                                        : Array.isArray(_par)
+                                        ? _par
+                                        : [_par])(
+                                      (() => {
+                                        try {
+                                          return $ctx
+                                            .plasmicCmsItinerariesPackageCollection[0]
+                                            .data.activity;
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return [];
                                           }
-                                        })()}
-                                      </React.Fragment>
-                                    </h6>
-                                    <div
-                                      className={classNames(
-                                        projectcss.all,
-                                        projectcss.__wab_text,
-                                        sty.text__kejy3
-                                      )}
-                                    >
-                                      <React.Fragment>
-                                        {(() => {
-                                          try {
-                                            return currentItem.activity;
-                                          } catch (e) {
-                                            if (
-                                              e instanceof TypeError ||
-                                              e?.plasmicType ===
-                                                "PlasmicUndefinedDataError"
-                                            ) {
-                                              return "";
-                                            }
-                                            throw e;
-                                          }
-                                        })()}
-                                      </React.Fragment>
-                                    </div>
-                                  </Stack__>
-                                </Stack__>
-                              );
-                            })}
-                          </div>
+                                          throw e;
+                                        }
+                                      })()
+                                    ).map(
+                                      (__plasmic_item_0, __plasmic_idx_0) => {
+                                        const currentItem = __plasmic_item_0;
+                                        const currentIndex = __plasmic_idx_0;
+                                        return (
+                                          <Stack__
+                                            as={"div"}
+                                            hasGap={true}
+                                            className={classNames(
+                                              projectcss.all,
+                                              sty.freeBox__cvvSu
+                                            )}
+                                            key={currentIndex}
+                                          >
+                                            <Icon2Icon
+                                              className={classNames(
+                                                projectcss.all,
+                                                sty.svg__vgYdy
+                                              )}
+                                              role={"img"}
+                                            />
+
+                                            <Stack__
+                                              as={"div"}
+                                              hasGap={true}
+                                              className={classNames(
+                                                projectcss.all,
+                                                sty.freeBox__vgrYa
+                                              )}
+                                            >
+                                              <h6
+                                                className={classNames(
+                                                  projectcss.all,
+                                                  projectcss.h6,
+                                                  projectcss.__wab_text,
+                                                  sty.h6__lgLae
+                                                )}
+                                              >
+                                                <React.Fragment>
+                                                  {(() => {
+                                                    try {
+                                                      return currentItem.time;
+                                                    } catch (e) {
+                                                      if (
+                                                        e instanceof
+                                                          TypeError ||
+                                                        e?.plasmicType ===
+                                                          "PlasmicUndefinedDataError"
+                                                      ) {
+                                                        return "";
+                                                      }
+                                                      throw e;
+                                                    }
+                                                  })()}
+                                                </React.Fragment>
+                                              </h6>
+                                              <div
+                                                className={classNames(
+                                                  projectcss.all,
+                                                  projectcss.__wab_text,
+                                                  sty.text__kejy3
+                                                )}
+                                              >
+                                                <React.Fragment>
+                                                  {(() => {
+                                                    try {
+                                                      return currentItem.activity;
+                                                    } catch (e) {
+                                                      if (
+                                                        e instanceof
+                                                          TypeError ||
+                                                        e?.plasmicType ===
+                                                          "PlasmicUndefinedDataError"
+                                                      ) {
+                                                        return "";
+                                                      }
+                                                      throw e;
+                                                    }
+                                                  })()}
+                                                </React.Fragment>
+                                              </div>
+                                            </Stack__>
+                                          </Stack__>
+                                        );
+                                      }
+                                    )}
+                                  </div>
+                                </div>
+                              )}
+                            </DataCtxReader__>
+                          </CmsQueryRepeater>
                         </div>
                         <div
                           className={classNames(
@@ -890,69 +977,136 @@ function PlasmicTourPackage__RenderFunc(props: {
                           >
                             {"Whats Included"}
                           </h4>
-                          <div
+                          <CmsQueryRepeater
                             className={classNames(
-                              projectcss.all,
-                              sty.freeBox__zdzgq
+                              "__wab_instance",
+                              sty.cmsDataFetcher__fDysq
                             )}
-                          >
-                            {(_par =>
-                              !_par ? [] : Array.isArray(_par) ? _par : [_par])(
-                              (() => {
-                                try {
-                                  return $ctx.tourlist.find(
-                                    tour => tour.id === $ctx.params.slug
-                                  ).whats_included;
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return [];
-                                  }
-                                  throw e;
-                                }
-                              })()
-                            ).map((__plasmic_item_0, __plasmic_idx_0) => {
-                              const currentItem = __plasmic_item_0;
-                              const currentIndex = __plasmic_idx_0;
-                              return (
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    sty.freeBox__bAixW
-                                  )}
-                                  key={currentIndex}
-                                >
+                            desc={false}
+                            emptyMessage={
+                              <DataCtxReader__>
+                                {$ctx => (
                                   <div
                                     className={classNames(
                                       projectcss.all,
                                       projectcss.__wab_text,
-                                      sty.text__uLbdJ
+                                      sty.text__bwHvc
                                     )}
                                   >
-                                    <React.Fragment>
-                                      {(() => {
-                                        try {
-                                          return currentItem;
-                                        } catch (e) {
-                                          if (
-                                            e instanceof TypeError ||
-                                            e?.plasmicType ===
-                                              "PlasmicUndefinedDataError"
-                                          ) {
-                                            return "";
-                                          }
-                                          throw e;
-                                        }
-                                      })()}
-                                    </React.Fragment>
+                                    {"No matching published entries found."}
                                   </div>
+                                )}
+                              </DataCtxReader__>
+                            }
+                            filterField={"packageId"}
+                            filterValue={(() => {
+                              try {
+                                return $ctx.params.slug;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()}
+                            forceEmptyState={false}
+                            forceLoadingState={false}
+                            limit={0}
+                            loadingMessage={
+                              <DataCtxReader__>
+                                {$ctx => (
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__q6Fcx
+                                    )}
+                                  >
+                                    {"Loading..."}
+                                  </div>
+                                )}
+                              </DataCtxReader__>
+                            }
+                            noAutoRepeat={false}
+                            noLayout={false}
+                            table={"inclusionPackage"}
+                            useDraft={false}
+                          >
+                            <DataCtxReader__>
+                              {$ctx => (
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox__zdzgq
+                                  )}
+                                >
+                                  {(_par =>
+                                    !_par
+                                      ? []
+                                      : Array.isArray(_par)
+                                      ? _par
+                                      : [_par])(
+                                    (() => {
+                                      try {
+                                        return $ctx
+                                          .plasmicCmsInclusionPackageItem.data
+                                          .includedItem;
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return [];
+                                        }
+                                        throw e;
+                                      }
+                                    })()
+                                  ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                                    const currentItem = __plasmic_item_0;
+                                    const currentIndex = __plasmic_idx_0;
+                                    return (
+                                      <div
+                                        className={classNames(
+                                          projectcss.all,
+                                          sty.freeBox__bAixW
+                                        )}
+                                        key={currentIndex}
+                                      >
+                                        <div
+                                          className={classNames(
+                                            projectcss.all,
+                                            projectcss.__wab_text,
+                                            sty.text__uLbdJ
+                                          )}
+                                        >
+                                          <React.Fragment>
+                                            {(() => {
+                                              try {
+                                                return currentItem.items;
+                                              } catch (e) {
+                                                if (
+                                                  e instanceof TypeError ||
+                                                  e?.plasmicType ===
+                                                    "PlasmicUndefinedDataError"
+                                                ) {
+                                                  return "";
+                                                }
+                                                throw e;
+                                              }
+                                            })()}
+                                          </React.Fragment>
+                                        </div>
+                                      </div>
+                                    );
+                                  })}
                                 </div>
-                              );
-                            })}
-                          </div>
+                              )}
+                            </DataCtxReader__>
+                          </CmsQueryRepeater>
                         </div>
                         <div
                           className={classNames(
@@ -970,69 +1124,136 @@ function PlasmicTourPackage__RenderFunc(props: {
                           >
                             {"Whats Excluded"}
                           </h4>
-                          <div
+                          <CmsQueryRepeater
                             className={classNames(
-                              projectcss.all,
-                              sty.freeBox__wkiVj
+                              "__wab_instance",
+                              sty.cmsDataFetcher__a608Z
                             )}
-                          >
-                            {(_par =>
-                              !_par ? [] : Array.isArray(_par) ? _par : [_par])(
-                              (() => {
-                                try {
-                                  return $ctx.tourlist.find(
-                                    tour => tour.id === $ctx.params.slug
-                                  ).whats_excluded;
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return [];
-                                  }
-                                  throw e;
-                                }
-                              })()
-                            ).map((__plasmic_item_0, __plasmic_idx_0) => {
-                              const currentItem = __plasmic_item_0;
-                              const currentIndex = __plasmic_idx_0;
-                              return (
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    sty.freeBox__qkIci
-                                  )}
-                                  key={currentIndex}
-                                >
+                            desc={false}
+                            emptyMessage={
+                              <DataCtxReader__>
+                                {$ctx => (
                                   <div
                                     className={classNames(
                                       projectcss.all,
                                       projectcss.__wab_text,
-                                      sty.text__odWqq
+                                      sty.text__pMk3
                                     )}
                                   >
-                                    <React.Fragment>
-                                      {(() => {
-                                        try {
-                                          return currentItem;
-                                        } catch (e) {
-                                          if (
-                                            e instanceof TypeError ||
-                                            e?.plasmicType ===
-                                              "PlasmicUndefinedDataError"
-                                          ) {
-                                            return "";
-                                          }
-                                          throw e;
-                                        }
-                                      })()}
-                                    </React.Fragment>
+                                    {"No matching published entries found."}
                                   </div>
+                                )}
+                              </DataCtxReader__>
+                            }
+                            filterField={"packageId"}
+                            filterValue={(() => {
+                              try {
+                                return $ctx.params.slug;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()}
+                            forceEmptyState={false}
+                            forceLoadingState={false}
+                            limit={0}
+                            loadingMessage={
+                              <DataCtxReader__>
+                                {$ctx => (
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__s9E38
+                                    )}
+                                  >
+                                    {"Loading..."}
+                                  </div>
+                                )}
+                              </DataCtxReader__>
+                            }
+                            noAutoRepeat={false}
+                            noLayout={false}
+                            table={"exclusionPackage"}
+                            useDraft={false}
+                          >
+                            <DataCtxReader__>
+                              {$ctx => (
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox__wkiVj
+                                  )}
+                                >
+                                  {(_par =>
+                                    !_par
+                                      ? []
+                                      : Array.isArray(_par)
+                                      ? _par
+                                      : [_par])(
+                                    (() => {
+                                      try {
+                                        return $ctx
+                                          .plasmicCmsExclusionPackageItem.data
+                                          .excludedItem;
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return [];
+                                        }
+                                        throw e;
+                                      }
+                                    })()
+                                  ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                                    const currentItem = __plasmic_item_0;
+                                    const currentIndex = __plasmic_idx_0;
+                                    return (
+                                      <div
+                                        className={classNames(
+                                          projectcss.all,
+                                          sty.freeBox__qkIci
+                                        )}
+                                        key={currentIndex}
+                                      >
+                                        <div
+                                          className={classNames(
+                                            projectcss.all,
+                                            projectcss.__wab_text,
+                                            sty.text__odWqq
+                                          )}
+                                        >
+                                          <React.Fragment>
+                                            {(() => {
+                                              try {
+                                                return currentItem.items;
+                                              } catch (e) {
+                                                if (
+                                                  e instanceof TypeError ||
+                                                  e?.plasmicType ===
+                                                    "PlasmicUndefinedDataError"
+                                                ) {
+                                                  return "";
+                                                }
+                                                throw e;
+                                              }
+                                            })()}
+                                          </React.Fragment>
+                                        </div>
+                                      </div>
+                                    );
+                                  })}
                                 </div>
-                              );
-                            })}
-                          </div>
+                              )}
+                            </DataCtxReader__>
+                          </CmsQueryRepeater>
                         </div>
                       </Stack__>
                       <div
@@ -1060,9 +1281,10 @@ function PlasmicTourPackage__RenderFunc(props: {
                             <React.Fragment>
                               {(() => {
                                 try {
-                                  return $ctx.tourlist.find(
-                                    tour => tour.id === $ctx.params.slug
-                                  ).price_per_person;
+                                  return $ctx.plasmicCmsTourPackageCollection.find(
+                                    item =>
+                                      item.data.packageId === $ctx.params.slug
+                                  ).data.pricePerPerson;
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
@@ -1088,9 +1310,10 @@ function PlasmicTourPackage__RenderFunc(props: {
                               {(() => {
                                 try {
                                   return (
-                                    $ctx.tourlist.find(
-                                      tour => tour.id === $ctx.params.slug
-                                    ).minimum_people + " / Pack"
+                                    $ctx.plasmicCmsTourPackageCollection.find(
+                                      item =>
+                                        item.data.packageId === $ctx.params.slug
+                                    ).data.minPeople + " Persons / Pack"
                                   );
                                 } catch (e) {
                                   if (
@@ -1115,9 +1338,10 @@ function PlasmicTourPackage__RenderFunc(props: {
                             <React.Fragment>
                               {(() => {
                                 try {
-                                  return $ctx.tourlist.find(
-                                    tour => tour.id === $ctx.params.slug
-                                  ).cancellation_policy;
+                                  return $ctx.plasmicCmsTourPackageCollection.find(
+                                    item =>
+                                      item.data.packageId === $ctx.params.slug
+                                  ).data.cancellationPolicy;
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
@@ -1156,7 +1380,7 @@ function PlasmicTourPackage__RenderFunc(props: {
                 </React.Fragment>
               )}
             </DataCtxReader__>
-          </DataProvider>
+          </CmsQueryRepeater>
         </div>
       </div>
     </React.Fragment>
@@ -1167,7 +1391,6 @@ const PlasmicDescendants = {
   root: [
     "root",
     "navigationBar",
-    "dataProvider",
     "hero",
     "h1",
     "details",
@@ -1176,15 +1399,6 @@ const PlasmicDescendants = {
     "button"
   ],
   navigationBar: ["navigationBar"],
-  dataProvider: [
-    "dataProvider",
-    "hero",
-    "h1",
-    "details",
-    "columns",
-    "sliderCarousel",
-    "button"
-  ],
   hero: ["hero", "h1"],
   h1: ["h1"],
   details: ["details", "columns", "sliderCarousel", "button"],
@@ -1198,7 +1412,6 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   navigationBar: typeof NavigationBar;
-  dataProvider: typeof DataProvider;
   hero: "section";
   h1: "h1";
   details: "section";
@@ -1268,7 +1481,6 @@ export const PlasmicTourPackage = Object.assign(
   {
     // Helper components rendering sub-elements
     navigationBar: makeNodeComponent("navigationBar"),
-    dataProvider: makeNodeComponent("dataProvider"),
     hero: makeNodeComponent("hero"),
     h1: makeNodeComponent("h1"),
     details: makeNodeComponent("details"),

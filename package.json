@@ -12,6 +12,7 @@
     "@plasmicapp/cli": "^0.1.326",
     "@plasmicapp/react-web": "^0.2.318",
     "@plasmicpkgs/plasmic-basic-components": "^0.0.209",
+    "@plasmicpkgs/plasmic-cms": "^0.0.250",
     "@plasmicpkgs/plasmic-nav": "^0.0.160",
     "@plasmicpkgs/react-awesome-reveal": "^3.8.191",
     "@plasmicpkgs/react-slick": "^0.0.211",

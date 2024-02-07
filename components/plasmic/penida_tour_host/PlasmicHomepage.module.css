@@ -165,7 +165,7 @@
   > img {
   margin-top: 24px;
 }
-.h6__s3DQu {
+.h6 {
   position: relative;
   color: #ffffff;
 }
@@ -442,47 +442,28 @@
     grid-column: 4;
   }
 }
-.dataProvider:global(.__wab_instance) {
+.cmsDataFetcher:global(.__wab_instance) {
+  width: 100%;
+  display: flex;
   max-width: 100%;
+  flex-direction: column;
   object-fit: cover;
   position: relative;
+  min-width: 0;
 }
-.freeBox___6Igve {
+.freeBox___2Qegb {
   display: flex;
-  position: relative;
   flex-direction: column;
-  align-items: center;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
   justify-content: flex-start;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 1098px;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-bottom: 24px;
-}
-@media (min-width: 0px) and (max-width: 768px) {
-  .freeBox___6Igve {
-    min-width: auto;
-  }
-}
-.h1__eaKiQ {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  color: #000000;
-  padding-bottom: 24px;
+  align-items: center;
   min-width: 0;
+  padding: 8px;
 }
-.h6__w9DQn {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  color: #000000;
-  padding-bottom: 24px;
-  min-width: 0;
-}
-.freeBox__ykcpZ {
+.freeBox__h1KJ5 {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   width: 100%;
@@ -495,12 +476,12 @@
   min-width: 1098px;
 }
 @media (min-width: 0px) and (max-width: 768px) {
-  .freeBox__ykcpZ {
+  .freeBox__h1KJ5 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
     min-width: auto;
   }
 }
-.link__oAau8 {
+.link__s000Y {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -517,12 +498,12 @@
   border-radius: 12px;
 }
 @media (min-width: 0px) and (max-width: 768px) {
-  .link__oAau8 {
+  .link__s000Y {
     display: flex;
     flex-direction: column;
   }
 }
-.img___78JBx {
+.img___3TgA0 {
   position: relative;
   object-fit: cover;
   width: 100%;
@@ -530,17 +511,17 @@
   min-width: 0;
   flex-shrink: 0;
 }
-.img___78JBx > picture > img {
+.img___3TgA0 > picture > img {
   object-fit: cover;
 }
 @media (min-width: 0px) and (max-width: 768px) {
-  .img___78JBx {
+  .img___3TgA0 {
     width: 100%;
     max-width: 100%;
     min-width: 0;
   }
 }
-.freeBox__encUo {
+.freeBox__jvCsR {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -552,7 +533,7 @@
   min-height: 0;
   padding: 24px 24px 0px;
 }
-.freeBox__encUo > :global(.__wab_flex-container) {
+.freeBox__jvCsR > :global(.__wab_flex-container) {
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
@@ -561,10 +542,10 @@
   margin-top: calc(0px - 12px);
   height: calc(100% + 12px);
 }
-.freeBox__encUo > :global(.__wab_flex-container) > *,
-.freeBox__encUo > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.freeBox__encUo > :global(.__wab_flex-container) > picture > img,
-.freeBox__encUo
+.freeBox__jvCsR > :global(.__wab_flex-container) > *,
+.freeBox__jvCsR > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__jvCsR > :global(.__wab_flex-container) > picture > img,
+.freeBox__jvCsR
   > :global(.__wab_flex-container)
   > :global(.__wab_slot)
   > picture
@@ -577,7 +558,7 @@
   max-width: 100%;
   min-width: 0;
 }
-.h4__gGevS {
+.h4__xcMXk {
   position: relative;
   width: 100%;
   height: auto;
@@ -585,14 +566,19 @@
   color: #ff0000;
   min-width: 0;
 }
-.text__bFu2K {
+.text__bRbj {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 90px;
   max-width: 100%;
+  white-space: pre;
+  text-overflow: clip;
+  overflow: hidden;
+  user-select: text;
   min-width: 0;
+  flex-shrink: 0;
 }
-.freeBox__ySuri {
+.freeBox__jvyZk {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -604,26 +590,40 @@
   min-width: 0;
   padding: 24px;
 }
-.button___4FvIx:global(.__wab_instance) {
+.button__zyDsr:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   width: 100%;
   min-width: 0;
 }
-.svg__jUv4H {
+.svg___2Ku {
   position: relative;
   object-fit: cover;
   width: auto;
   height: 1em;
 }
-.text__rKVt {
+.text__lDQdk {
   font-size: 1em;
 }
-.svg__pjXke {
+.svg__hCumo {
   position: relative;
   object-fit: cover;
   width: auto;
   height: 1em;
+}
+.text__nL6T {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.text__uvmat {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
 }
 .section {
   display: grid;
