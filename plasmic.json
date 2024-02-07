@@ -118,6 +118,11 @@
           "id": "75i2qCajQ9ui",
           "name": "banner-min.png",
           "filePath": "../public/plasmic/penida_tour_host/images/bannerMinpng.png"
+        },
+        {
+          "id": "Cf_ukZRyZyjD",
+          "name": "cover-west penida.jpeg",
+          "filePath": "../public/plasmic/penida_tour_host/images/coverWestPenidajpeg.jpg"
         }
       ],
       "indirect": false,
@@ -195,8 +200,7 @@
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "r3ASNrnyvLLLAtDvzUioQ",

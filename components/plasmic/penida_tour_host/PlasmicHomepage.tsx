@@ -446,7 +446,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   Package_name: "West Nusapenida Tour",
                   Desc: "Explore the most popular places in nusa penida : klingking beach, Broken Beach, Angel billabong and Crystal bay",
                   "Featured Image":
-                    "/plasmic/penida_tour_host/images/nusapenidaHomeMinjpg.jpg",
+                    "https://penidatourhost.vercel.app/plasmic/penida_tour_host/images/cover-west penida.jpeg",
                   Price: "Rp 825.000 "
                 },
                 {
@@ -467,7 +467,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 },
                 {
                   id: "04",
-                  Package_name: "West Nusapenida Tour  Include snorkeling ",
+                  Package_name: "Mount Batur Sunrise jeep tour",
                   Desc: "This tour is to explore the most beautiful sunrise form the slope of the mount Batur, to search the sunrise you do not need to walk very early",
                   "Featured Image":
                     "/plasmic/penida_tour_host/images/nusapenidaHomeMinjpg.jpg",
@@ -579,12 +579,25 @@ function PlasmicHomepage__RenderFunc(props: {
                                   : "100%"
                               }
                               loading={"lazy"}
-                              src={{
-                                src: "/plasmic/penida_tour_host/images/imageTour1Jpg.jpg",
-                                fullWidth: 600,
-                                fullHeight: 600,
-                                aspectRatio: undefined
-                              }}
+                              src={(() => {
+                                try {
+                                  return currentItem["Featured Image"];
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return {
+                                      src: "/plasmic/penida_tour_host/images/coverWestPenidajpeg.jpg",
+                                      fullWidth: 768,
+                                      fullHeight: 1024,
+                                      aspectRatio: undefined
+                                    };
+                                  }
+                                  throw e;
+                                }
+                              })()}
                             />
 
                             <Stack__

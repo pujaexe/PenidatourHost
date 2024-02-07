@@ -65,6 +65,8 @@ import { SliderWrapper } from "@plasmicpkgs/react-slick";
 import { sliderHelpers as SliderWrapper_Helpers } from "@plasmicpkgs/react-slick";
 import Button from "../../Button"; // plasmic-import: ZzYHWFOP3W93/component
 
+import { useScreenVariants as useScreenVariantst5XXltJfKzLl } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: T5xXLTJfKZLl/globalVariant
+
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_penida_tour_host.module.css"; // plasmic-import: 8sqboUZ4NdiwTEB5KeNSKm/projectcss
@@ -75,11 +77,7 @@ import Icon2Icon from "./icons/PlasmicIcon__Icon2"; // plasmic-import: 9Hxs0EmoD
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: piPhikoMaLwY/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: oAGk-17bb9h7/icon
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
 createPlasmicElementProxy;
-
 
 export type PlasmicTourPackage__VariantMembers = {};
 export type PlasmicTourPackage__VariantsArgs = {};
@@ -154,6 +152,10 @@ function PlasmicTourPackage__RenderFunc(props: {
     $ctx,
     $queries: {},
     $refs
+  });
+
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariantst5XXltJfKzLl()
   });
 
   return (
