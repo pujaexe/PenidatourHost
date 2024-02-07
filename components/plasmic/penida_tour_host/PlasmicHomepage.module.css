@@ -455,6 +455,11 @@
   grid-column-end: -1 !important;
   padding: 8px 24px;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .freeBox__mgTG {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
 .cmsDataFetcher:global(.__wab_instance) {
   width: auto;
   display: flex;
