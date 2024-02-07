@@ -63,6 +63,8 @@ import { NavigationBar } from "@plasmicpkgs/plasmic-nav";
 import { Reveal } from "@plasmicpkgs/react-awesome-reveal";
 import Button from "../../Button"; // plasmic-import: ZzYHWFOP3W93/component
 import { CmsQueryRepeater } from "@plasmicpkgs/plasmic-cms";
+import { CmsRowImage } from "@plasmicpkgs/plasmic-cms";
+import { CmsRowField } from "@plasmicpkgs/plasmic-cms";
 
 import { useScreenVariants as useScreenVariantst5XXltJfKzLl } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: T5xXLTJfKZLl/globalVariant
 
@@ -90,12 +92,13 @@ export type PlasmicHomepage__OverridesType = {
   navigationBar?: Flex__<typeof NavigationBar>;
   hero?: Flex__<"section">;
   h6?: Flex__<"h6">;
+  h4?: Flex__<"h4">;
   why?: Flex__<"section">;
   columns?: Flex__<"div">;
   article?: Flex__<"article">;
   tour?: Flex__<"section">;
   cmsDataFetcher?: Flex__<typeof CmsQueryRepeater>;
-  h5?: Flex__<"h5">;
+  cmsEntryImage?: Flex__<typeof CmsRowImage>;
   section?: Flex__<"section">;
   h3?: Flex__<"h3">;
 };
@@ -316,11 +319,13 @@ function PlasmicHomepage__RenderFunc(props: {
                   {"Explore Nusapenida"}
                 </h1>
                 <h4
+                  data-plasmic-name={"h4"}
+                  data-plasmic-override={overrides.h4}
                   className={classNames(
                     projectcss.all,
                     projectcss.h4,
                     projectcss.__wab_text,
-                    sty.h4__cIhdc
+                    sty.h4
                   )}
                 >
                   {"Explore the most popular places in nusa penida "}
@@ -439,266 +444,176 @@ function PlasmicHomepage__RenderFunc(props: {
             className={classNames(projectcss.all, sty.tour)}
             id={"packages"}
           >
-            <CmsQueryRepeater
-              data-plasmic-name={"cmsDataFetcher"}
-              data-plasmic-override={overrides.cmsDataFetcher}
-              className={classNames("__wab_instance", sty.cmsDataFetcher)}
-              desc={false}
-              emptyMessage={
+            <div className={classNames(projectcss.all, sty.freeBox__mgTG)}>
+              <CmsQueryRepeater
+                data-plasmic-name={"cmsDataFetcher"}
+                data-plasmic-override={overrides.cmsDataFetcher}
+                className={classNames("__wab_instance", sty.cmsDataFetcher)}
+                desc={false}
+                emptyMessage={
+                  <DataCtxReader__>
+                    {$ctx => (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__ucFo3
+                        )}
+                      >
+                        {"No matching published entries found."}
+                      </div>
+                    )}
+                  </DataCtxReader__>
+                }
+                forceEmptyState={false}
+                forceLoadingState={false}
+                limit={0}
+                loadingMessage={
+                  <DataCtxReader__>
+                    {$ctx => (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___3J4G3
+                        )}
+                      >
+                        {"Loading..."}
+                      </div>
+                    )}
+                  </DataCtxReader__>
+                }
+                mode={"rows"}
+                noAutoRepeat={false}
+                noLayout={true}
+                orderBy={"_id"}
+                table={"tourPackage"}
+                useDraft={false}
+              >
                 <DataCtxReader__>
                   {$ctx => (
                     <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__nL6T
-                      )}
+                      className={classNames(projectcss.all, sty.freeBox__p4SEl)}
                     >
-                      {"No matching published entries found."}
-                    </div>
-                  )}
-                </DataCtxReader__>
-              }
-              forceEmptyState={false}
-              forceLoadingState={false}
-              limit={0}
-              loadingMessage={
-                <DataCtxReader__>
-                  {$ctx => (
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__uvmat
-                      )}
-                    >
-                      {"Loading..."}
-                    </div>
-                  )}
-                </DataCtxReader__>
-              }
-              mode={"rows"}
-              noAutoRepeat={true}
-              noLayout={false}
-              orderBy={"_id"}
-              table={"tourPackage"}
-              useDraft={false}
-            >
-              <DataCtxReader__>
-                {$ctx => (
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___2Qegb)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__h1KJ5)}
-                    >
-                      {(_par =>
-                        !_par ? [] : Array.isArray(_par) ? _par : [_par])(
-                        (() => {
-                          try {
-                            return $ctx.plasmicCmsTourPackageCollection;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return [];
-                            }
-                            throw e;
+                      <CmsRowImage
+                        data-plasmic-name={"cmsEntryImage"}
+                        data-plasmic-override={overrides.cmsEntryImage}
+                        className={classNames(
+                          "__wab_instance",
+                          sty.cmsEntryImage
+                        )}
+                        srcProp={"src"}
+                      >
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img___9G1Sp)}
+                          displayHeight={"210px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"none"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"100%"}
+                          src={
+                            "https://studio.plasmic.app/static/img/placeholder-full.png"
                           }
-                        })()
-                      ).map((__plasmic_item_0, __plasmic_idx_0) => {
-                        const currentItem = __plasmic_item_0;
-                        const currentIndex = __plasmic_idx_0;
-                        return (
-                          <PlasmicLink__
+                        />
+                      </CmsRowImage>
+                      <Stack__
+                        as={"div"}
+                        hasGap={true}
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__qZKw
+                        )}
+                      >
+                        <CmsRowField
+                          className={classNames(
+                            "__wab_instance",
+                            sty.cmsEntryField___8Mseu
+                          )}
+                          field={"packageName"}
+                          themeResetClassName={classNames(
+                            projectcss.root_reset,
+                            projectcss.root_reset_tags,
+                            projectcss.plasmic_default_styles,
+                            projectcss.plasmic_mixins,
+                            projectcss.plasmic_tokens
+                          )}
+                        />
+
+                        <CmsRowField
+                          className={classNames(
+                            "__wab_instance",
+                            sty.cmsEntryField__zscCp
+                          )}
+                          field={"pricePerPerson"}
+                          themeResetClassName={classNames(
+                            projectcss.root_reset,
+                            projectcss.root_reset_tags,
+                            projectcss.plasmic_default_styles,
+                            projectcss.plasmic_mixins,
+                            projectcss.plasmic_tokens
+                          )}
+                        />
+
+                        <CmsRowField
+                          className={classNames(
+                            "__wab_instance",
+                            sty.cmsEntryField__xrbJr
+                          )}
+                          field={"description"}
+                          themeResetClassName={classNames(
+                            projectcss.root_reset,
+                            projectcss.root_reset_tags,
+                            projectcss.plasmic_default_styles,
+                            projectcss.plasmic_mixins,
+                            projectcss.plasmic_tokens
+                          )}
+                        />
+                      </Stack__>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__xFk8A
+                        )}
+                      >
+                        <Button
+                          className={classNames(
+                            "__wab_instance",
+                            sty.button__lMtXh
+                          )}
+                          color={"yellow"}
+                          link={`/${(() => {
+                            try {
+                              return $ctx.plasmicCmsTourPackageItem.data
+                                .packageId;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "";
+                              }
+                              throw e;
+                            }
+                          })()}`}
+                        >
+                          <div
                             className={classNames(
                               projectcss.all,
-                              projectcss.a,
-                              sty.link__s000Y
+                              projectcss.__wab_text,
+                              sty.text__c2C8X
                             )}
-                            component={Link}
-                            href={`/${(() => {
-                              try {
-                                return currentItem.data.packageId;
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "";
-                                }
-                                throw e;
-                              }
-                            })()}`}
-                            key={currentIndex}
-                            platform={"nextjs"}
                           >
-                            <PlasmicImg__
-                              alt={""}
-                              className={classNames(sty.img___3TgA0)}
-                              displayHeight={"210px"}
-                              displayMaxHeight={"none"}
-                              displayMaxWidth={
-                                hasVariant(
-                                  globalVariants,
-                                  "screen",
-                                  "mobileOnly"
-                                )
-                                  ? "100%"
-                                  : "none"
-                              }
-                              displayMinHeight={"0"}
-                              displayMinWidth={"0"}
-                              displayWidth={
-                                hasVariant(
-                                  globalVariants,
-                                  "screen",
-                                  "mobileOnly"
-                                )
-                                  ? "100%"
-                                  : "100%"
-                              }
-                              loading={"lazy"}
-                              src={(() => {
-                                try {
-                                  return currentItem.data.featureImage.url;
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return undefined;
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            />
-
-                            <Stack__
-                              as={"div"}
-                              hasGap={true}
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__jvCsR
-                              )}
-                            >
-                              <h5
-                                data-plasmic-name={"h5"}
-                                data-plasmic-override={overrides.h5}
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.h5,
-                                  projectcss.__wab_text,
-                                  sty.h5
-                                )}
-                              >
-                                <React.Fragment>
-                                  {(() => {
-                                    try {
-                                      return currentItem.data.packageName;
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return "";
-                                      }
-                                      throw e;
-                                    }
-                                  })()}
-                                </React.Fragment>
-                              </h5>
-                              <h4
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.h4,
-                                  projectcss.__wab_text,
-                                  sty.h4__xcMXk
-                                )}
-                              >
-                                <div
-                                  className={projectcss.__wab_expr_html_text}
-                                  dangerouslySetInnerHTML={{
-                                    __html: (() => {
-                                      try {
-                                        return currentItem.data.pricePerPerson;
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return "";
-                                        }
-                                        throw e;
-                                      }
-                                    })()
-                                  }}
-                                />
-                              </h4>
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__bRbj
-                                )}
-                              >
-                                <div
-                                  className={projectcss.__wab_expr_html_text}
-                                  dangerouslySetInnerHTML={{
-                                    __html: (() => {
-                                      try {
-                                        return currentItem.data.description;
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return "";
-                                        }
-                                        throw e;
-                                      }
-                                    })()
-                                  }}
-                                />
-                              </div>
-                            </Stack__>
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__jvyZk
-                              )}
-                            >
-                              <Button
-                                className={classNames(
-                                  "__wab_instance",
-                                  sty.button__zyDsr
-                                )}
-                                color={"yellow"}
-                              >
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.__wab_text,
-                                    sty.text__lDQdk
-                                  )}
-                                >
-                                  {"See Details"}
-                                </div>
-                              </Button>
-                            </div>
-                          </PlasmicLink__>
-                        );
-                      })}
+                            {"See Details"}
+                          </div>
+                        </Button>
+                      </div>
                     </div>
-                  </div>
-                )}
-              </DataCtxReader__>
-            </CmsQueryRepeater>
+                  )}
+                </DataCtxReader__>
+              </CmsQueryRepeater>
+            </div>
           </section>
           <section
             data-plasmic-name={"section"}
@@ -741,24 +656,26 @@ const PlasmicDescendants = {
     "navigationBar",
     "hero",
     "h6",
+    "h4",
     "why",
     "columns",
     "article",
     "tour",
     "cmsDataFetcher",
-    "h5",
+    "cmsEntryImage",
     "section",
     "h3"
   ],
   navigationBar: ["navigationBar"],
-  hero: ["hero", "h6"],
+  hero: ["hero", "h6", "h4"],
   h6: ["h6"],
+  h4: ["h4"],
   why: ["why", "columns", "article"],
   columns: ["columns", "article"],
   article: ["article"],
-  tour: ["tour", "cmsDataFetcher", "h5"],
-  cmsDataFetcher: ["cmsDataFetcher", "h5"],
-  h5: ["h5"],
+  tour: ["tour", "cmsDataFetcher", "cmsEntryImage"],
+  cmsDataFetcher: ["cmsDataFetcher", "cmsEntryImage"],
+  cmsEntryImage: ["cmsEntryImage"],
   section: ["section", "h3"],
   h3: ["h3"]
 } as const;
@@ -770,12 +687,13 @@ type NodeDefaultElementType = {
   navigationBar: typeof NavigationBar;
   hero: "section";
   h6: "h6";
+  h4: "h4";
   why: "section";
   columns: "div";
   article: "article";
   tour: "section";
   cmsDataFetcher: typeof CmsQueryRepeater;
-  h5: "h5";
+  cmsEntryImage: typeof CmsRowImage;
   section: "section";
   h3: "h3";
 };
@@ -843,12 +761,13 @@ export const PlasmicHomepage = Object.assign(
     navigationBar: makeNodeComponent("navigationBar"),
     hero: makeNodeComponent("hero"),
     h6: makeNodeComponent("h6"),
+    h4: makeNodeComponent("h4"),
     why: makeNodeComponent("why"),
     columns: makeNodeComponent("columns"),
     article: makeNodeComponent("article"),
     tour: makeNodeComponent("tour"),
     cmsDataFetcher: makeNodeComponent("cmsDataFetcher"),
-    h5: makeNodeComponent("h5"),
+    cmsEntryImage: makeNodeComponent("cmsEntryImage"),
     section: makeNodeComponent("section"),
     h3: makeNodeComponent("h3"),
 
