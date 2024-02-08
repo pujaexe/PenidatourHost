@@ -83,6 +83,9 @@ import Icon2Icon from "./icons/PlasmicIcon__Icon2"; // plasmic-import: 9Hxs0EmoD
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: piPhikoMaLwY/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: oAGk-17bb9h7/icon
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 createPlasmicElementProxy;
 
 export type PlasmicTourPackage__VariantMembers = {};
