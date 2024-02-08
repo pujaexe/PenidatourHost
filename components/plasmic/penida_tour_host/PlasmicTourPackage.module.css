@@ -106,15 +106,6 @@
   max-width: 100%;
   color: #000000;
 }
-.cmsDataFetcher__ancfu:global(.__wab_instance) {
-  width: 100%;
-  display: flex;
-  max-width: 100%;
-  flex-direction: column;
-  object-fit: cover;
-  position: relative;
-  min-width: 0;
-}
 .hero {
   display: grid;
   position: relative;
@@ -420,15 +411,6 @@
   border-radius: 12px;
   padding: 24px;
 }
-.cmsDataFetcher__edPv5:global(.__wab_instance) {
-  width: 100%;
-  display: flex;
-  max-width: 100%;
-  flex-direction: column;
-  object-fit: cover;
-  position: relative;
-  min-width: 0;
-}
 .sliderCarousel:global(.__wab_instance) {
   width: 100%;
   max-width: 100%;
@@ -460,89 +442,6 @@
 .img__tgVyT > picture > img {
   object-fit: cover;
 }
-.freeBox__zjdbH {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 8px;
-}
-.img__nEui2 {
-  object-fit: cover;
-  max-width: 100%;
-  height: 230px;
-  width: 100%;
-  min-width: 0;
-  flex-shrink: 0;
-}
-.img__nEui2 > picture > img {
-  object-fit: cover;
-}
-.freeBox__ujxC4 {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 8px;
-}
-.img__mNaWu {
-  object-fit: cover;
-  max-width: 100%;
-  height: 230px;
-  width: 100%;
-  min-width: 0;
-  flex-shrink: 0;
-}
-.img__mNaWu > picture > img {
-  object-fit: cover;
-}
-.freeBox__ophxe {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 8px;
-}
-.img__c8Ysk {
-  object-fit: cover;
-  max-width: 100%;
-  height: 230px;
-  width: 100%;
-  min-width: 0;
-  flex-shrink: 0;
-}
-.img__c8Ysk > picture > img {
-  object-fit: cover;
-}
-.text__uZgCj {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
-.text___9Vp7M {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
 .freeBox__sNhHz {
   display: flex;
   position: relative;
@@ -564,15 +463,6 @@
   height: auto;
   max-width: 100%;
   padding-bottom: 24px;
-  min-width: 0;
-}
-.cmsDataFetcher___8Vhvl:global(.__wab_instance) {
-  width: 100%;
-  display: flex;
-  max-width: 100%;
-  flex-direction: column;
-  object-fit: cover;
-  position: relative;
   min-width: 0;
 }
 .freeBox__jdqSe {
@@ -671,20 +561,6 @@
   max-width: 100%;
   min-width: 0;
 }
-.text__idaq8 {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
-.text___6E07 {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
 .freeBox__oGuw7 {
   display: flex;
   position: relative;
@@ -706,15 +582,6 @@
   height: auto;
   max-width: 100%;
   padding-bottom: 24px;
-  min-width: 0;
-}
-.cmsDataFetcher__fDysq:global(.__wab_instance) {
-  width: 100%;
-  display: flex;
-  max-width: 100%;
-  flex-direction: column;
-  object-fit: cover;
-  position: relative;
   min-width: 0;
 }
 .freeBox__zdzgq {
@@ -746,20 +613,6 @@
   max-width: 100%;
   min-width: 0;
 }
-.text__bwHvc {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
-.text__q6Fcx {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
 .freeBox__vyuXc {
   display: flex;
   position: relative;
@@ -781,15 +634,6 @@
   height: auto;
   max-width: 100%;
   padding-bottom: 24px;
-  min-width: 0;
-}
-.cmsDataFetcher__a608Z:global(.__wab_instance) {
-  width: 100%;
-  display: flex;
-  max-width: 100%;
-  flex-direction: column;
-  object-fit: cover;
-  position: relative;
   min-width: 0;
 }
 .freeBox__wkiVj {
@@ -815,20 +659,6 @@
   min-width: 0;
 }
 .text__odWqq {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
-.text__pMk3 {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
-.text__s9E38 {
   position: relative;
   width: 100%;
   height: auto;
@@ -928,18 +758,4 @@
   object-fit: cover;
   width: auto;
   height: 1em;
-}
-.text___7GdW {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
-.text__lNjDc {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
 }
