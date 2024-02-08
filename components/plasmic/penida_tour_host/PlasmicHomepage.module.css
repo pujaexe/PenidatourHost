@@ -179,7 +179,7 @@
   margin-top: calc(0px + 24px) !important;
   min-width: 0;
 }
-.h4__cIhdc {
+.h4 {
   position: relative;
   color: #ffffff;
 }
@@ -545,17 +545,20 @@
   > img {
   margin-top: 12px;
 }
-.h4__gjhS {
+.h5__gjhS {
   width: 100%;
   height: auto;
   max-width: 100%;
   min-width: 0;
 }
-.h5 {
+.h5___3IpB8 {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ff0000;
   min-width: 0;
 }
 .freeBox__rsXOh {
@@ -576,8 +579,8 @@
   left: auto;
   top: auto;
   max-height: 90px;
+  min-height: 90px;
   min-width: 0;
-  min-height: 0;
 }
 .freeBox___0K9RV {
   display: flex;

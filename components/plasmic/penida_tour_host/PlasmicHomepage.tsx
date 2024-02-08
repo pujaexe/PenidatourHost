@@ -96,11 +96,11 @@ export type PlasmicHomepage__OverridesType = {
   navigationBar?: Flex__<typeof NavigationBar>;
   hero?: Flex__<"section">;
   h6?: Flex__<"h6">;
+  h4?: Flex__<"h4">;
   why?: Flex__<"section">;
   columns?: Flex__<"div">;
   article?: Flex__<"article">;
   tour?: Flex__<"section">;
-  h5?: Flex__<"h5">;
   section?: Flex__<"section">;
   h3?: Flex__<"h3">;
 };
@@ -343,11 +343,13 @@ function PlasmicHomepage__RenderFunc(props: {
                   {"Explore Nusapenida"}
                 </h1>
                 <h4
+                  data-plasmic-name={"h4"}
+                  data-plasmic-override={overrides.h4}
                   className={classNames(
                     projectcss.all,
                     projectcss.h4,
                     projectcss.__wab_text,
-                    sty.h4__cIhdc
+                    sty.h4
                   )}
                 >
                   {"Explore the most popular places in nusa penida "}
@@ -527,12 +529,12 @@ function PlasmicHomepage__RenderFunc(props: {
                           sty.freeBox___7Y5P
                         )}
                       >
-                        <h4
+                        <h5
                           className={classNames(
                             projectcss.all,
-                            projectcss.h4,
+                            projectcss.h5,
                             projectcss.__wab_text,
-                            sty.h4__gjhS
+                            sty.h5__gjhS
                           )}
                         >
                           <React.Fragment>
@@ -550,21 +552,19 @@ function PlasmicHomepage__RenderFunc(props: {
                               }
                             })()}
                           </React.Fragment>
-                        </h4>
+                        </h5>
                         <h5
-                          data-plasmic-name={"h5"}
-                          data-plasmic-override={overrides.h5}
                           className={classNames(
                             projectcss.all,
                             projectcss.h5,
                             projectcss.__wab_text,
-                            sty.h5
+                            sty.h5___3IpB8
                           )}
                         >
                           <React.Fragment>
                             {(() => {
                               try {
-                                return currentItem.price;
+                                return currentItem.price + " IDR";
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||
@@ -692,22 +692,22 @@ const PlasmicDescendants = {
     "navigationBar",
     "hero",
     "h6",
+    "h4",
     "why",
     "columns",
     "article",
     "tour",
-    "h5",
     "section",
     "h3"
   ],
   navigationBar: ["navigationBar"],
-  hero: ["hero", "h6"],
+  hero: ["hero", "h6", "h4"],
   h6: ["h6"],
+  h4: ["h4"],
   why: ["why", "columns", "article"],
   columns: ["columns", "article"],
   article: ["article"],
-  tour: ["tour", "h5"],
-  h5: ["h5"],
+  tour: ["tour"],
   section: ["section", "h3"],
   h3: ["h3"]
 } as const;
@@ -719,11 +719,11 @@ type NodeDefaultElementType = {
   navigationBar: typeof NavigationBar;
   hero: "section";
   h6: "h6";
+  h4: "h4";
   why: "section";
   columns: "div";
   article: "article";
   tour: "section";
-  h5: "h5";
   section: "section";
   h3: "h3";
 };
@@ -791,11 +791,11 @@ export const PlasmicHomepage = Object.assign(
     navigationBar: makeNodeComponent("navigationBar"),
     hero: makeNodeComponent("hero"),
     h6: makeNodeComponent("h6"),
+    h4: makeNodeComponent("h4"),
     why: makeNodeComponent("why"),
     columns: makeNodeComponent("columns"),
     article: makeNodeComponent("article"),
     tour: makeNodeComponent("tour"),
-    h5: makeNodeComponent("h5"),
     section: makeNodeComponent("section"),
     h3: makeNodeComponent("h3"),
 

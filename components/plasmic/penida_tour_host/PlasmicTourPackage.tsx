@@ -519,24 +519,59 @@ function PlasmicTourPackage__RenderFunc(props: {
                         data-plasmic-override={overrides.sliderCarousel}
                         {...child$Props}
                       >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__vtzJn
-                          )}
-                        >
-                          <PlasmicImg__
-                            alt={""}
-                            className={classNames(sty.img__tgVyT)}
-                            displayHeight={"230px"}
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={"100%"}
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"100%"}
-                            src={undefined}
-                          />
-                        </div>
+                        {(_par =>
+                          !_par ? [] : Array.isArray(_par) ? _par : [_par])(
+                          (() => {
+                            try {
+                              return $queries.query.data[0].img_galery;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return [];
+                              }
+                              throw e;
+                            }
+                          })()
+                        ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                          const currentItem = __plasmic_item_0;
+                          const currentIndex = __plasmic_idx_0;
+                          return (
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__vtzJn
+                              )}
+                              key={currentIndex}
+                            >
+                              <PlasmicImg__
+                                alt={""}
+                                className={classNames(sty.img__tgVyT)}
+                                displayHeight={"300px"}
+                                displayMaxHeight={"none"}
+                                displayMaxWidth={"100%"}
+                                displayMinHeight={"0"}
+                                displayMinWidth={"0"}
+                                displayWidth={"100%"}
+                                src={(() => {
+                                  try {
+                                    return currentItem;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              />
+                            </div>
+                          );
+                        })}
                       </SliderWrapper>
                     );
                   })()}
@@ -814,7 +849,7 @@ function PlasmicTourPackage__RenderFunc(props: {
                     <React.Fragment>
                       {(() => {
                         try {
-                          return $queries.query.data[0].price;
+                          return $queries.query.data[0].price + " IDR";
                         } catch (e) {
                           if (
                             e instanceof TypeError ||
@@ -838,7 +873,7 @@ function PlasmicTourPackage__RenderFunc(props: {
                     <React.Fragment>
                       {(() => {
                         try {
-                          return $queries.query.data[0].pax;
+                          return $queries.query.data[0].pax + " Person / pax";
                         } catch (e) {
                           if (
                             e instanceof TypeError ||
@@ -882,6 +917,9 @@ function PlasmicTourPackage__RenderFunc(props: {
                       data-plasmic-override={overrides.button}
                       className={classNames("__wab_instance", sty.button)}
                       color={"yellow"}
+                      link={
+                        "https://wa.me/6281246699833?text=Hello%20Penida%20Tour%20Host"
+                      }
                     >
                       {"Book Now"}
                     </Button>
