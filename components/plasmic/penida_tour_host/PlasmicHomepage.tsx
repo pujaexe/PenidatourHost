@@ -74,6 +74,9 @@ import { useScreenVariants as useScreenVariantst5XXltJfKzLl } from "./PlasmicGlo
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import projectcss from "./plasmic_penida_tour_host.module.css"; // plasmic-import: 8sqboUZ4NdiwTEB5KeNSKm/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: uiobudG9bYmv/css
 
