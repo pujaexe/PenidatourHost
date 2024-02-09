@@ -65,7 +65,6 @@ import {
   usePlasmicInvalidate
 } from "@plasmicapp/react-web/lib/data-sources";
 
-import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { NavigationBar } from "@plasmicpkgs/plasmic-nav";
 import { SliderWrapper } from "@plasmicpkgs/react-slick";
 import { sliderHelpers as SliderWrapper_Helpers } from "@plasmicpkgs/react-slick";
@@ -75,9 +74,6 @@ import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 import { useScreenVariants as useScreenVariantst5XXltJfKzLl } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: T5xXLTJfKZLl/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
-
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 import projectcss from "./plasmic_penida_tour_host.module.css"; // plasmic-import: 8sqboUZ4NdiwTEB5KeNSKm/projectcss
 import sty from "./PlasmicTourPackage.module.css"; // plasmic-import: 0Pcep1A6T4N4/css
@@ -100,7 +96,6 @@ export const PlasmicTourPackage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicTourPackage__OverridesType = {
   root?: Flex__<"div">;
-  embedHtml?: Flex__<typeof Embed>;
   navigationBar?: Flex__<typeof NavigationBar>;
   hero?: Flex__<"section">;
   h1?: Flex__<"h1">;
@@ -216,15 +211,6 @@ function PlasmicTourPackage__RenderFunc(props: {
             sty.root
           )}
         >
-          <Embed
-            data-plasmic-name={"embedHtml"}
-            data-plasmic-override={overrides.embedHtml}
-            className={classNames("__wab_instance", sty.embedHtml)}
-            code={
-              '<link rel="stylesheet" href="slick-carousel/slick/slick.css">\n<link rel="stylesheet" href="slick-carousel/slick/slick-theme.css">'
-            }
-          />
-
           <NavigationBar
             data-plasmic-name={"navigationBar"}
             data-plasmic-override={overrides.navigationBar}
@@ -248,7 +234,12 @@ function PlasmicTourPackage__RenderFunc(props: {
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
                   displayWidth={"auto"}
-                  src={"https://static1.plasmic.app/nav-logo-placeholder.svg"}
+                  src={{
+                    src: "/plasmic/penida_tour_host/images/nusaPenidaLogopng.png",
+                    fullWidth: 595,
+                    fullHeight: 200,
+                    aspectRatio: undefined
+                  }}
                 />
               </PlasmicLink__>
             }
@@ -951,7 +942,6 @@ function PlasmicTourPackage__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "embedHtml",
     "navigationBar",
     "hero",
     "h1",
@@ -960,7 +950,6 @@ const PlasmicDescendants = {
     "sliderCarousel",
     "button"
   ],
-  embedHtml: ["embedHtml"],
   navigationBar: ["navigationBar"],
   hero: ["hero", "h1"],
   h1: ["h1"],
@@ -974,7 +963,6 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  embedHtml: typeof Embed;
   navigationBar: typeof NavigationBar;
   hero: "section";
   h1: "h1";
@@ -1044,7 +1032,6 @@ export const PlasmicTourPackage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    embedHtml: makeNodeComponent("embedHtml"),
     navigationBar: makeNodeComponent("navigationBar"),
     hero: makeNodeComponent("hero"),
     h1: makeNodeComponent("h1"),
