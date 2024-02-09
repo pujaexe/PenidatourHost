@@ -123,6 +123,11 @@
           "id": "Cf_ukZRyZyjD",
           "name": "cover-west penida.jpeg",
           "filePath": "../public/plasmic/penida_tour_host/images/coverWestPenidajpeg.jpg"
+        },
+        {
+          "id": "oHOiWDe_rLLc",
+          "name": "nusa penida logo.png",
+          "filePath": "../public/plasmic/penida_tour_host/images/nusaPenidaLogopng.png"
         }
       ],
       "indirect": false,

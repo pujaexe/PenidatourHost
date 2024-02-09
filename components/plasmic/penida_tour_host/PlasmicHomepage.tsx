@@ -74,9 +74,6 @@ import { useScreenVariants as useScreenVariantst5XXltJfKzLl } from "./PlasmicGlo
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
 import projectcss from "./plasmic_penida_tour_host.module.css"; // plasmic-import: 8sqboUZ4NdiwTEB5KeNSKm/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: uiobudG9bYmv/css
 
@@ -253,7 +250,12 @@ function PlasmicHomepage__RenderFunc(props: {
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
                   displayWidth={"auto"}
-                  src={"https://static1.plasmic.app/nav-logo-placeholder.svg"}
+                  src={{
+                    src: "/plasmic/penida_tour_host/images/nusaPenidaLogopng.png",
+                    fullWidth: 595,
+                    fullHeight: 200,
+                    aspectRatio: undefined
+                  }}
                 />
               </PlasmicLink__>
             }

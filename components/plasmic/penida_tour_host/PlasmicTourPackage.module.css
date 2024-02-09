@@ -27,6 +27,11 @@
     grid-column: 4;
   }
 }
+.embedHtml:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
 .navigationBar:global(.__wab_instance) {
   width: 100%;
   display: flex;

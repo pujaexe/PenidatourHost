@@ -65,6 +65,7 @@ import {
   usePlasmicInvalidate
 } from "@plasmicapp/react-web/lib/data-sources";
 
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { NavigationBar } from "@plasmicpkgs/plasmic-nav";
 import { SliderWrapper } from "@plasmicpkgs/react-slick";
 import { sliderHelpers as SliderWrapper_Helpers } from "@plasmicpkgs/react-slick";
@@ -83,9 +84,6 @@ import Icon2Icon from "./icons/PlasmicIcon__Icon2"; // plasmic-import: 9Hxs0EmoD
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: piPhikoMaLwY/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: oAGk-17bb9h7/icon
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
 createPlasmicElementProxy;
 
 export type PlasmicTourPackage__VariantMembers = {};
@@ -99,6 +97,7 @@ export const PlasmicTourPackage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicTourPackage__OverridesType = {
   root?: Flex__<"div">;
+  embedHtml?: Flex__<typeof Embed>;
   navigationBar?: Flex__<typeof NavigationBar>;
   hero?: Flex__<"section">;
   h1?: Flex__<"h1">;
@@ -214,6 +213,15 @@ function PlasmicTourPackage__RenderFunc(props: {
             sty.root
           )}
         >
+          <Embed
+            data-plasmic-name={"embedHtml"}
+            data-plasmic-override={overrides.embedHtml}
+            className={classNames("__wab_instance", sty.embedHtml)}
+            code={
+              '<link rel="stylesheet" href="slick-carousel/slick/slick.css">\n<link rel="stylesheet" href="slick-carousel/slick/slick-theme.css">'
+            }
+          />
+
           <NavigationBar
             data-plasmic-name={"navigationBar"}
             data-plasmic-override={overrides.navigationBar}
@@ -940,6 +948,7 @@ function PlasmicTourPackage__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "embedHtml",
     "navigationBar",
     "hero",
     "h1",
@@ -948,6 +957,7 @@ const PlasmicDescendants = {
     "sliderCarousel",
     "button"
   ],
+  embedHtml: ["embedHtml"],
   navigationBar: ["navigationBar"],
   hero: ["hero", "h1"],
   h1: ["h1"],
@@ -961,6 +971,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  embedHtml: typeof Embed;
   navigationBar: typeof NavigationBar;
   hero: "section";
   h1: "h1";
@@ -1030,6 +1041,7 @@ export const PlasmicTourPackage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    embedHtml: makeNodeComponent("embedHtml"),
     navigationBar: makeNodeComponent("navigationBar"),
     hero: makeNodeComponent("hero"),
     h1: makeNodeComponent("h1"),
